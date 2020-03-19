@@ -12,11 +12,10 @@
         @endslot
     @endcomponent
 
-    @component('back-end.shared.edit' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes])
-        <form action="{{ route($routeName.'.update' , [ $row]) }}" method="POST">
-            {{ method_field('put') }}
+    @component('back-end.shared.create' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes])
+        <form action="{{ route($routeName.'.store') }}" method="POST" enctype="multipart/form-data">
             @include('back-end.'.$folderName.'.form')
-            <button type="submit" class="btn btn-primary pull-right">Update {{ $moduleName }}</button>
+            <button type="submit" class="btn btn-primary pull-right">Add {{ $moduleName }}</button>
             <div class="clearfix"></div>
         </form>
     @endcomponent

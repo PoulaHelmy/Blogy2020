@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\BackEnd\Comments;
+namespace App\Http\Requests\Backend\Comments;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +13,7 @@ class Store extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            //
+            'comment' => ['required' ,'min:10'],
+            'video_id' => ['required' ,'integer']
         ];
     }
 }

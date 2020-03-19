@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\BackEnd\Tags;
+namespace App\Http\Requests\Backend\Tags;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +13,7 @@ class Store extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'max:191'],
         ];
     }
 }
