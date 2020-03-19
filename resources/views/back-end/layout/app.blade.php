@@ -16,39 +16,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="/BackEndAssets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="/BackEndAssets/demo/demo.css" rel="stylesheet" />
+    @stack('css')
 </head>
 
 <body class="dark-edition">
 <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="/BackEndAssets/img/sidebar-2.jpg">
-        <!--
-          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-          Tip 2: you can also add an image using data-image tag
-      -->
-        <div class="logo">
-            <a href="#" class="simple-text logo-normal">
-                Blogy Admin DashBourd
-            </a>
-        </div>
-        @include('back-end.layout.sidebar')
-    </div>
+    @include('back-end.layout.sidebar')
     <div class="main-panel">
         <!-- Navbar -->
-
-        @include('back-end.layout.header')
-
-        <!-- End Navbar -->
-
         <div class="content">
-
+            <div class="container-fluid">
             @yield('content')
-
         </div>
-
-        @include('back-end.layout.footer')
+    </div>
+    @include('back-end.layout.footer')
 
         <script>
             const x = new Date().getFullYear();
@@ -249,6 +230,7 @@
 
     });
 </script>
+@stack('js')
 </body>
 
 </html>

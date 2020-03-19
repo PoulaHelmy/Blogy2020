@@ -15,6 +15,8 @@ class CreateTagsVideosTable extends Migration
     {
         Schema::create('tags_videos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('tag_id');
+            $table->integer('video_id');
             $table->timestamps();
         });
     }

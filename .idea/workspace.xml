@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25851794-3449-4d43-815b-a620490a8e24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/back-end/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_000959_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_000959_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003006_create_skills_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003006_create_skills_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003031_create_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003031_create_tags_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003042_create_pages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003042_create_pages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003105_create_videos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003105_create_videos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003126_create_skills_videos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003126_create_skills_videos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003139_create_tags_videos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003139_create_tags_videos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003156_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003156_create_comments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003219_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003219_create_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003301_add_group_to_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003301_add_group_to_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,8 +145,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeds" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\database\seeds" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\users" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\shared" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app\Models" />
     </key>
@@ -152,7 +174,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584573778828</updated>
-      <workItem from="1584573799346" duration="8767000" />
+      <workItem from="1584573799346" duration="12173000" />
     </task>
     <servers />
   </component>
@@ -164,9 +186,13 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="517" y="295" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1584577320986" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1584588366735">
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584591056722">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584588366735" />
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584591056722" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1584592434350">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584592434350" />
   </component>
 </project>

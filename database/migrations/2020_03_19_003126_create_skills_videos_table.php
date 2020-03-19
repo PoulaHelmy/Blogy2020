@@ -15,6 +15,8 @@ class CreateSkillsVideosTable extends Migration
     {
         Schema::create('skills_videos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('skill_id');
+            $table->integer('video_id');
             $table->timestamps();
         });
     }

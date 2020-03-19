@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
     <div class="container-fluid">
         <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+            <a class="navbar-brand" href="javascript:void(0)">{{$nav_title}}</a>
+            {{$slot}}
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
             <span class="sr-only">Toggle navigation</span>
@@ -19,6 +20,7 @@
                     </button>
                 </div>
             </form>
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0)">
@@ -48,11 +50,16 @@
                     <a class="nav-link" href="javascript:void(0)">
                         <i class="material-icons">person</i>
                         <p class="d-lg-none d-md-block">
-                            Account
+                            @if(isset(auth()->user))
+                                {{auth()->user->name}}
+                            @else
+                                Account
+                            @endif
                         </p>
                     </a>
                 </li>
             </ul>
+
         </div>
     </div>
 </nav>
