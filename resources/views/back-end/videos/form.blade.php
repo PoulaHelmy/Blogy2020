@@ -1,5 +1,6 @@
 {{ csrf_field() }}
 <div class="row">
+    <input type="hidden" value="App\Models\{{ $moduleName }}" name="photoable_type">
     @php $input = "name"; @endphp
     <div class="col-md-6">
         <div class="form-group bmd-form-group">

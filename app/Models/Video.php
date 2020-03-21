@@ -14,9 +14,24 @@ class Video extends Model
         'youtube' ,
         'cat_id' ,
         'user_id' ,
-        'published',
-        'image'
+        'published'
     ];
+    public function comments()
+    {
+        return $this->morphMany(\App\Models\Comments::class, 'commentable');
+    }
+
+    public function photos(){
+        return $this->morphOne(\App\Models\Photo::class,'photoable');
+    }
+    public function tags()
+    {
+        return $this->morphToMany(\App\Models\Tag::class, 'taggable');
+    }
+    public function skills()
+    {
+        return $this->morphToMany(\App\Models\Skill::class, 'skillable');
+    }
     public function user(){
         return $this->belongsTo(User::class , 'user_id');
     }
@@ -25,17 +40,7 @@ class Video extends Model
         return $this->belongsTo(Category::class , 'cat_id');
     }
 
-    public function skills(){
-        return $this->belongsToMany(Skill::class , 'skills_videos');
-    }
 
-    public function comments(){
-        return $this->hasMany(Comments::class);
-    }
-
-    public function tags(){
-        return $this->belongsToMany(Tag::class , 'tags_videos');
-    }
 
     public function scopePublished(){
         return $this->where('published' , 1);

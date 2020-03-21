@@ -24,11 +24,10 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required|unique:posts',
-            'description'=>'required',
+            'name'=>'required|unique:posts|max:191',
+            'des'=>'required',
             'content'=>'required',
-            'image'=>'required|image',
-            'category' => 'required'
+            'cat_id' => ['required'  ,'integer' ],
         ];
     }
 }

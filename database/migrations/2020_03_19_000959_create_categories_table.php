@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('meta_keywords');
             $table->string('meta_des');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Backend\Comments;
+namespace App\Http\Requests\BackEnd\Photos;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,9 +24,10 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'comment' => ['required' ,'min:10'],
-            'commentable_type'=>['required'],
-            'commentable_id'=>['required']
+            'src' => ['required' ,'min:10'],
+            'photoable_type'=>['required'],
+            'photoable_id'=>['required'],
+
         ];
     }
 }

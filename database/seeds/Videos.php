@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Photo;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
@@ -14,10 +15,7 @@ class Videos extends Seeder
     {
         $faker = Faker::create();
 
-        $images = [
-            '1557522399WcPLaLQWh0.png',
-            '1557521022RN6bZNDxRt.jpg'
-        ];
+
 
         $youtube = [
             'https://www.youtube.com/watch?v=Y49Ba16pK20',
@@ -36,11 +34,17 @@ class Videos extends Seeder
                 'cat_id' => 1,
                 'youtube' => $youtube[rand(0,3)],
                 'published' => rand(0,1),
-                'image' => $images[rand(0,1)],
                 'des' => $faker->paragraph,
                 'user_id' => 1
             ];
             $video = \App\Models\Video::create($array);
+            $photo='images/doZoaRNal3Ss6VOBLNSjQhuVNfkd8p1ZXAznrfUQ.jpeg';
+            Photo::create([
+                    'src'=> $photo,
+                    'photoable_type'=> 'App\Models\Video',
+                    'photoable_id'=> $video->id
+                ]
+            );
             $video->skills()->sync(array_rand($ids , 2));
             $video->tags()->sync(array_rand($ids , 3));
         }

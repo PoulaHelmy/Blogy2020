@@ -17,7 +17,6 @@ class Comments extends Seeder
             $array = [
                 'comment' => $faker->paragraph,
                 'user_id' => 1,
-                'video_id' => rand(1,9)
             ];
             \App\Models\Comments::create($array);
         }

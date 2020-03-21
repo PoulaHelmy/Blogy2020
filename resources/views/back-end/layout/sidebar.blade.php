@@ -1,12 +1,8 @@
-<div class="sidebar" data-color="purple" data-background-color="black" data-image="/assets/img/sidebar-2.jpg">
-    <!--
-    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+<div class="sidebar" data-color="purple" data-background-color="black" data-image="/BackEndAssets/img/sidebar-2.jpg">
 
-    Tip 2: you can also add an image using data-image tag
--->
     <div class="logo">
         <a href="{{ route('home') }}" class="simple-text logo-normal">
-            5dmat-web
+            Blogy DashBourd
         </a>
     </div>
     <div class="sidebar-wrapper">
@@ -57,6 +53,13 @@
                 <a  class="nav-link"  href="{{ route('videos.index') }}">
                     <i class="material-icons">video_call</i>
                     <p>Videos</p>
+                </a>
+            </li>
+
+            <li class="nav-item {{ is_active('posts') }}">
+                <a  class="nav-link"  href="{{ route('posts.index') }}">
+                    <i class="material-icons">book</i>
+                    <p>Posts</p>
                 </a>
             </li>
 

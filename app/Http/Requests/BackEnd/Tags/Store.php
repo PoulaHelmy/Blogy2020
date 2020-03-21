@@ -25,6 +25,8 @@ class Store extends FormRequest
     {
         return [
             'name' => ['required', 'max:191'],
+            'taggable_id'=>['required'],
+            'taggable_type'=>['required']
         ];
     }
 }

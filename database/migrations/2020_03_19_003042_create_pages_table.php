@@ -19,6 +19,7 @@ class CreatePagesTable extends Migration
             $table->text('des');
             $table->string('meta_des');
             $table->string('meta_keywords');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

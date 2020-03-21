@@ -23,7 +23,8 @@
                 <form action="{{ route('comment.update' , ['id' => $comment->id]) }}" method="post">
                     {{ csrf_field() }}
                     @include('back-end.comments.form' , ['row' => $comment ])
-                    <input type="hidden" value="{{ $row->id }}" name="video_id">
+                    <input type="hidden" value="App\Models\{{ $moduleName }}" name="commentable_type">
+                    <input type="hidden" value="{{ $row->id }}" name="commentable_id">
                     <button type="submit" class="btn btn-primary pull-right">update comment</button>
                     <div class="clearfix"></div>
                 </form>

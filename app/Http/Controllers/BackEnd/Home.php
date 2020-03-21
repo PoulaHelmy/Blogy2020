@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-use App\Models\Comments;
+
 use App\Models\User;
-use Illuminate\Http\Request;
+
 
 class Home extends BackEndController
 {
@@ -14,7 +14,6 @@ class Home extends BackEndController
     }
 
     public function index(){
-        $comments = Comments::with('user' , 'video')->orderby('id' , 'desc')->paginate(20);
-        return view('back-end.home' , compact('comments'));
+        return view('back-end.home' );
     }
 }

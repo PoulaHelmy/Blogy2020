@@ -19,12 +19,13 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::resource('tags', 'Tags')->except(['show']);
     Route::resource('pages', 'Pages')->except(['show']);
     Route::resource('videos', 'Videos')->except(['show']);
+    Route::resource('posts', 'Posts')->except(['show']);
     Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
     Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
 
-    Route::post('comments', 'Videos@commentStore')->name('comment.store');
-    Route::get('comments/{id}', 'Videos@commentDelete')->name('comment.delete');
-    Route::post('comments/{id}', 'Videos@commentUpdate')->name('comment.update');
+    Route::post('comments', 'Comments@store')->name('comment.store');
+    Route::get('comments/{id}', 'Comments@delete')->name('comment.delete');
+    Route::post('comments/{id}', 'Comments@update')->name('comment.update');
 });
 
 Auth::routes();

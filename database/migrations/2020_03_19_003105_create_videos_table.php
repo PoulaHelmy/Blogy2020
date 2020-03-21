@@ -23,7 +23,7 @@ class CreateVideosTable extends Migration
             $table->boolean('published')->default(1);
             $table->integer('user_id');
             $table->integer('cat_id');
-            $table->string('image');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

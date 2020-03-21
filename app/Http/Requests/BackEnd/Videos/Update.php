@@ -30,8 +30,7 @@ class Update extends FormRequest
             'des' => ['required' , 'min:10'],
             'youtube' => ['required' , 'min:10' ,'url' ] ,
             'cat_id' => ['required'  ,'integer' ],
-            'published' => ['required' ],
-            'image' => [ 'nullable', 'image'],
+            'published' => ['required' ]
         ];
     }
 }
