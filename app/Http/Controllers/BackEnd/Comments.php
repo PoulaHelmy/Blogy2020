@@ -49,4 +49,22 @@ class Comments extends BackEndController
         $row->update($request->all());
         return redirect()->route('posts.edit' , [$row->commentable->id  , '#comments']);
     }
+    public function playliststore(Store $request)
+    {
+        $requestArray = $request->all() + ["user_id" => auth()->user()->id];
+        \App\Models\Comments::create($requestArray);
+        return redirect()->route('playlists.edit' , [ $requestArray['commentable_id'] , '#comments']);
+    }
+
+    public function playlistdelete($id){
+        $row  = \App\Models\Comments::findOrFail($id);
+        $row->delete();
+        return redirect()->route('playlists.edit' , [ $row->commentable->id , '#comments']);
+    }
+
+    public function playlistupdate($id , Store $request){
+        $row  = \App\Models\Comments::findOrFail($id);
+        $row->update($request->all());
+        return redirect()->route('playlists.edit' , [$row->commentable->id  , '#comments']);
+    }
 }

@@ -41,7 +41,10 @@ class Video extends Model
         return $this->belongsTo(Category::class , 'cat_id');
     }
 
-
+    public function playlists()
+    {
+        return $this->morphToMany(\App\Models\Playlist::class, 'playlistable');
+    }
 
     public function scopePublished(){
         return $this->where('published' , 1);

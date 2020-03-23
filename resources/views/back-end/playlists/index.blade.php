@@ -31,7 +31,13 @@
                         Name
                     </th>
                     <th>
-                        email
+                        published
+                    </th>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        User
                     </th>
                     <th class="text-right">
                         control
@@ -47,11 +53,21 @@
                             {{ $row->name }}
                         </td>
                         <td>
-                            {{ $row->email }}
+                            @if($row->published == 1)
+                                published
+                            @else
+                                hidden
+                            @endif
+                        </td>
+                        <td>
+                            {{ $row->cat->name }}
+                        </td>
+                        <td>
+                            {{ $row->user->name }}
                         </td>
                         <td class="td-actions text-right">
                             @include('back-end.shared.buttons.edit')
-                            @include('back-end.shared.buttons.delete')
+                            @include('back-end.shared.buttons.softDelete')
                         </td>
                     </tr>
                 @endforeach

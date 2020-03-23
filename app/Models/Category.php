@@ -18,4 +18,8 @@ class Category extends Model
     {
         return $this->belongsTo(Video::class);
     }
+    public function playlists()
+    {
+        return $this->belongsTo(Playlist::class);
+    }
 }

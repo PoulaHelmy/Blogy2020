@@ -21,4 +21,8 @@ class Skill extends Model
     {
         return $this->morphedByMany(Video::class, 'skillable');
     }
+    public function playlists()
+    {
+        return $this->morphedByMany(Playlist::class, 'skillable');
+    }
 }

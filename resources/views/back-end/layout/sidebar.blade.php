@@ -20,7 +20,12 @@
                     <p>Users</p>
                 </a>
             </li>
-
+            <li class="nav-item {{ is_active('playlist') }}">
+                <a  class="nav-link"  href="{{ route('playlists.index') }}">
+                    <i class="material-icons">playlist_add_check</i>
+                    <p>Playlists</p>
+                </a>
+            </li>
             <li class="nav-item {{ is_active('categories') }}">
                 <a  class="nav-link"  href="{{ route('categories.index') }}">
                     <i class="material-icons">bubble_chart</i>

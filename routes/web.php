@@ -13,14 +13,14 @@
 
 Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::get('home', 'Home@index')->name('admin.home');
-    Route::resource('users', 'Users')->except(['show']);
-    Route::resource('categories', 'Categories')->except(['show']);
-    Route::resource('skills', 'Skills')->except(['show']);
-    Route::resource('tags', 'Tags')->except(['show']);
-    Route::resource('pages', 'Pages')->except(['show']);
-    Route::resource('videos', 'Videos')->except(['show']);
-    Route::resource('posts', 'Posts')->except(['show']);
-    Route::resource('posts', 'Posts')->except(['show']);
+    Route::resource('users', 'Users');
+    Route::resource('categories', 'Categories');
+    Route::resource('skills', 'Skills');
+    Route::resource('tags', 'Tags');
+    Route::resource('pages', 'Pages');
+    Route::resource('videos', 'Videos');
+    Route::resource('posts', 'Posts');
+    Route::resource('playlists', 'Playlists');
     Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
 
     Route::post('videocomments', 'Comments@store')->name('videoscomment.store');
@@ -30,6 +30,10 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::post('postcomments', 'Comments@poststore')->name('postscomment.store');
     Route::get('postcomments/{id}', 'Comments@postdelete')->name('postscomment.delete');
     Route::post('postcomments/{id}', 'Comments@postupdate')->name('postscomment.update');
+
+    Route::post('playlistcomments', 'Comments@playliststore')->name('playlistscomment.store');
+    Route::get('playlistcomments/{id}', 'Comments@playlistdelete')->name('playlistscomment.delete');
+    Route::post('playlistcomments/{id}', 'Comments@playlistupdate')->name('playlistscomment.update');
 
 
     Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
@@ -42,6 +46,10 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::get('/trashedposts', 'Posts@trashed')->name('trashedposts.index');
     Route::get('/trashedposts/{id}', 'Posts@destroypost')->name('trashedposts.destroy');
     Route::get('/restoredposts/{id}', 'Posts@restorepost')->name('trashedposts.restore');
+
+    Route::get('/trashedplaylists', 'Playlists@trashed')->name('trashedplaylists.index');
+    Route::get('/trashedplaylists/{id}', 'Playlists@destroypost')->name('trashedplaylists.destroy');
+    Route::get('/restoredplaylists/{id}', 'Playlists@restorepost')->name('trashedplaylists.restore');
 
 
 });

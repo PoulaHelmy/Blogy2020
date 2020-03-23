@@ -37,18 +37,13 @@ class Post extends Model
     public function cat(){
         return $this->belongsTo(Category::class,'cat_id');
     }
-//    public function tags() {
-//        return $this->belongsToMany(Tag::class,'tags_posts');
-//    }
-//    public function skills() {
-//        return $this->belongsToMany(Skill::class,'skills_posts');
-//    }
 
     public function user() {
         return $this->belongsTo(User::class,'user_id');
     }
-
-    public function hasTag($tagid){
-        return in_array($tagid,$this->tags->pluck('id')->toArray());
+    public function playlists()
+    {
+        return $this->morphToMany(\App\Models\Playlist::class, 'playlistable');
     }
+
 }
