@@ -4,43 +4,21 @@
     <list default="true" id="25851794-3449-4d43-815b-a620490a8e24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/BackEndController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/BackEndController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/CommentTrait.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Comments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Tags.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Videos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Videos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Comments/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Comments/Store.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Posts/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Posts/Store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Posts/Update.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Posts/Update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Tags/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Tags/Store.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Videos/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Videos/Store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Videos/Update.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Videos/Update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Skill.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Skill.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_000959_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_000959_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003006_create_skills_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003006_create_skills_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003031_create_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003031_create_tags_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003042_create_pages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003042_create_pages_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003105_create_videos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003105_create_videos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003126_create_skills_videos_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003139_create_tags_videos_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003156_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_003156_create_comments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_003301_add_group_to_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_045247_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_19_045247_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_045631_create_tags_posts_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_19_045656_create_skills_posts_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Comments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/Videos.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Videos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/comments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/comments/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/comments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/comments/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/side-bar.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/shared/buttons/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/shared/buttons/delete.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" afterDir="false" />
@@ -169,18 +147,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/back-end/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/back-end/trashed" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\trashed" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\Trashed" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\layout" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app\Http\Requests" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app\Models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\layout" />
-      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end" />
-      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app\Http\Requests" />
-      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app\Http\Requests\BackEnd" />
-      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\database\seeds" />
     </key>
   </component>
   <component name="RunManager">
@@ -202,7 +180,8 @@
       <workItem from="1584573799346" duration="13300000" />
       <workItem from="1584595418778" duration="1997000" />
       <workItem from="1584638334315" duration="10527000" />
-      <workItem from="1584807289047" duration="8305000" />
+      <workItem from="1584807289047" duration="9554000" />
+      <workItem from="1584904377686" duration="14644000" />
     </task>
     <servers />
   </component>
@@ -223,10 +202,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584812696214">
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584915211884">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584812696214" />
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584915211884" />
     <state x="308" y="0" width="1043" height="738" key="CommitChangelistDialog2" timestamp="1584597536524">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -247,9 +226,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584634095431" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1584814723215">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1584923535344">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584814723215" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584923535344" />
   </component>
 </project>

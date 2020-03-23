@@ -21,13 +21,8 @@
         </form>
 
         @slot('md4')
-            @php $url = getYoutubeId($row->youtube);
-            $SRC=isset($row->photos->src)?$row->photos->src:""; @endphp
-            @if($url)
-                <iframe width="250" src="https://www.youtube.com/embed/{{ $url }}" style="margin-bottom: 20px" frameborder="0"  allowfullscreen></iframe>
-            @endif
+            @php $SRC=isset($row->photos->src)?$row->photos->src:""; @endphp
             <img src="{{asset('storage/'.$SRC)}}" width="250">
-
         @endslot
     @endcomponent
 

@@ -20,12 +20,30 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::resource('pages', 'Pages')->except(['show']);
     Route::resource('videos', 'Videos')->except(['show']);
     Route::resource('posts', 'Posts')->except(['show']);
+    Route::resource('posts', 'Posts')->except(['show']);
     Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
+
+    Route::post('videocomments', 'Comments@store')->name('videoscomment.store');
+    Route::get('videocomments/{id}', 'Comments@delete')->name('videoscomment.delete');
+    Route::post('videocomments/{id}', 'Comments@update')->name('videoscomment.update');
+
+    Route::post('postcomments', 'Comments@poststore')->name('postscomment.store');
+    Route::get('postcomments/{id}', 'Comments@postdelete')->name('postscomment.delete');
+    Route::post('postcomments/{id}', 'Comments@postupdate')->name('postscomment.update');
+
+
     Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
 
-    Route::post('comments', 'Comments@store')->name('comment.store');
-    Route::get('comments/{id}', 'Comments@delete')->name('comment.delete');
-    Route::post('comments/{id}', 'Comments@update')->name('comment.update');
+
+    Route::get('/trashedvideos', 'Videos@trashed')->name('trashedvideos.index');
+    Route::get('/trashedvideos/{id}', 'Videos@destroyvideo')->name('trashedvideos.destroy');
+    Route::get('/restoredvideo/{id}', 'Videos@restorevideo')->name('trashedvideos.restore');
+
+    Route::get('/trashedposts', 'Posts@trashed')->name('trashedposts.index');
+    Route::get('/trashedposts/{id}', 'Posts@destroypost')->name('trashedposts.destroy');
+    Route::get('/restoredposts/{id}', 'Posts@restorepost')->name('trashedposts.restore');
+
+
 });
 
 Auth::routes();

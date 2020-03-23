@@ -7,9 +7,9 @@ use App\Models\Tag;
 use App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
-{
+{use SoftDeletes;
     protected $fillable=[
         'name',
         'des',
@@ -34,8 +34,8 @@ class Post extends Model
     {
         return $this->morphToMany(\App\Models\Skill::class, 'skillable');
     }
-    public function category(){
-        return $this->belongsTo(Category::class,'category_id');
+    public function cat(){
+        return $this->belongsTo(Category::class,'cat_id');
     }
 //    public function tags() {
 //        return $this->belongsToMany(Tag::class,'tags_posts');

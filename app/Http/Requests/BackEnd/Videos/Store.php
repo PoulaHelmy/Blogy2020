@@ -31,7 +31,7 @@ class Store extends FormRequest
             'youtube' => ['required' , 'min:10' ,'url' ] ,
             'cat_id' => ['required'  ,'integer' ],
             'published' => ['required' ],
-
+            'image'=>['required','image' ]
         ];
     }
 }

@@ -31,9 +31,6 @@
                         Name
                     </th>
                     <th>
-                        published
-                    </th>
-                    <th>
                         Category
                     </th>
                     <th>
@@ -51,13 +48,6 @@
                         </td>
                         <td>
                             {{ $row->name }}
-                        </td>
-                        <td>
-                            @if($row->published == 1)
-                                published
-                            @else
-                                hidden
-                            @endif
                         </td>
                         <td>
                             {{ $row->cat->name }}

@@ -28,6 +28,7 @@ class Store extends FormRequest
             'des'=>'required',
             'content'=>'required',
             'cat_id' => ['required'  ,'integer' ],
+            'image'=>['required','image' ]
         ];
     }
 }

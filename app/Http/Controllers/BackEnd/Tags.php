@@ -23,7 +23,6 @@ class Tags extends BackEndController
     public function update($id , Store $request){
         $row = $this->model->FindOrFail($id);
         $row->update($request->all());
-
         return redirect()->route('tags.edit' , [ $row->id]);
     }
 }

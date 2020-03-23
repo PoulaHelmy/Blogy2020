@@ -93,7 +93,41 @@ class Videos extends BackEndController
         );
         return $photo;
     }
-    public function destroy($id)
-    {
-        dd("Poula"); }
+    public function trashed(){
+        $rows=Video::onlyTrashed()->paginate(10);
+        $moduleName = $this->pluralModelName();
+        $sModuleName = $this->getModelName();
+        $routeName = $this->getClassNameFromModel();
+        return view('back-end.trashed.videosIndex', compact(
+            'rows',
+            'moduleName',
+            'sModuleName',
+            'routeName'
+        ));
+    }
+
+    public function destroyvideo($id){
+        $video=Video::withTrashed()->firstWhere('id','=',$id);
+        if($video->trashed())
+        {
+            foreach ($video->tags as $tag) {
+                 $tag->pivot->delete();
+            }
+            foreach ($video->skills as $skill) {
+                 $skill->pivot->delete();
+            }
+            Storage::disk('public')->delete($video->photos->src);
+            $video->photos->delete();
+            $video->forceDelete();
+
+        }
+        else
+            $video->delete();
+        return $this->trashed();
+    }
+
+    public function restorevideo($id){
+        $video=Video::withTrashed()->firstWhere('id','=',$id)->restore();
+        return $this->trashed();
+    }
 }

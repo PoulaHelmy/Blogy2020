@@ -55,20 +55,32 @@
                     <p>Videos</p>
                 </a>
             </li>
-
+            <li class="nav-item {{ is_active('trashedvideos') }}">
+                <a  class="nav-link"  href="{{ route('trashedvideos.index') }}">
+                    <i class="material-icons">delete</i>
+                    <p>Trashed Videos</p>
+                </a>
+            </li>
             <li class="nav-item {{ is_active('posts') }}">
                 <a  class="nav-link"  href="{{ route('posts.index') }}">
                     <i class="material-icons">book</i>
                     <p>Posts</p>
                 </a>
             </li>
-
+            <li class="nav-item {{ is_active('trashedposts') }}">
+                <a  class="nav-link"  href="{{ route('trashedposts.index') }}">
+                    <i class="material-icons">delete</i>
+                    <p>Trashed Posts</p>
+                </a>
+            </li>
             <li class="nav-item {{ is_active('messages') }}">
                 <a  class="nav-link"  href="{{ route('messages.index') }}">
                     <i class="material-icons">cloud</i>
                     <p>Messages</p>
                 </a>
             </li>
+
+
             <!-- your sidebar here -->
         </ul>
     </div>

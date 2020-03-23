@@ -12,7 +12,7 @@
                         data-original-title="Edit Comment">
                     <i class="material-icons">edit</i>
                 </button>
-                <a href="{{ route('comment.delete' , ['id' => $comment->id]) }}" rel="tooltip" title="" class="btn btn-white btn-link btn-sm"
+                <a href="{{ route($parentclass.'comment.delete' , ['id' => $comment->id]) }}" rel="tooltip" title="" class="btn btn-white btn-link btn-sm"
                         data-original-title="Remove Comment">
                     <i class="material-icons">close</i>
                 </a>
@@ -20,7 +20,7 @@
         </tr>
         <tr style="display: none">
             <td colspan="4">
-                <form action="{{ route('comment.update' , ['id' => $comment->id]) }}" method="post">
+                <form action="{{ route($parentclass.'comment.update' , ['id' => $comment->id]) }}" method="post">
                     {{ csrf_field() }}
                     @include('back-end.comments.form' , ['row' => $comment ])
                     <input type="hidden" value="App\Models\{{ $moduleName }}" name="commentable_type">

@@ -1,4 +1,4 @@
-<form action="{{ route('comment.store') }}" method="post">
+<form action="{{ route($parentclass.'comment.store') }}" method="post">
     {{ csrf_field() }}
     @include('back-end.comments.form')
     <input type="hidden" value="App\Models\{{ $moduleName }}" name="commentable_type">
