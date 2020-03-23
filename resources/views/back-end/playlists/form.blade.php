@@ -56,7 +56,7 @@
     </div>
 
     @php $input = "level"; @endphp
-    <div class="col-md-12 my-4">
+    <div class="col-md-6 my-4">
         <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Video Status</label>
             <select name="{{$input}}" class="form-control js-example-basic-single @error($input) is-invalid @enderror">

@@ -6,6 +6,7 @@ use App\Http\Requests\BackEnd\Posts\Store;
 use App\Http\Requests\BackEnd\Posts\Update;
 use App\Models\Category;
 use App\Models\Photo;
+use App\Models\Playlist;
 use App\Models\Post;
 use App\Models\Skill;
 use App\Models\Tag;
@@ -27,6 +28,7 @@ class Posts extends BackEndController
         $array =  [
             'categories' => Category::get(),
             'skills' => Skill::get(),
+            'playlists'=>Playlist::get(),
             'tags' => Tag::get(),
             'selectedSkills' => [],
             'selectedTags' => [],
@@ -75,6 +77,10 @@ class Posts extends BackEndController
         if (isset($requestArray['tags']) && !empty($requestArray['tags'])) {
             $row->tags()->sync($requestArray['tags']);
         }
+        if (isset($requestArray['playlist']) && !empty($requestArray['playlist'])) {
+            $row->playlists()->sync($requestArray['playlist']);
+        }
+
     }
 
     protected function uploadImage($request,$id)
@@ -109,6 +115,9 @@ class Posts extends BackEndController
             }
             foreach ($post->skills as $skill) {
                 $skill->pivot->delete();
+            }
+            foreach ($post->playlists as $playlist) {
+                $playlist->pivot->delete();
             }
             Storage::disk('public')->delete($post->photos->src);
             $post->photos->delete();

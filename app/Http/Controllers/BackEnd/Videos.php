@@ -7,6 +7,7 @@ use App\Http\Requests\Backend\Videos\Store;
 use App\Http\Requests\Backend\Videos\Update;
 use App\Models\Category;
 use App\Models\Photo;
+use App\Models\Playlist;
 use App\Models\Skill;
 use App\Models\Tag;
 use App\Models\Video;
@@ -33,9 +34,11 @@ class Videos extends BackEndController
             'categories' => Category::get(),
             'skills' => Skill::get(),
             'tags' => Tag::get(),
+            'playlists'=>Playlist::get(),
             'selectedSkills' => [],
             'selectedTags' => [],
-            'comments' => []
+            'comments' => [],
+
         ];
         if(request()->route()->parameter('video')){
             $array['selectedSkills']  = $this->model->find(request()->route()->parameter('video'))
@@ -81,6 +84,10 @@ class Videos extends BackEndController
         if (isset($requestArray['tags']) && !empty($requestArray['tags'])) {
             $row->tags()->sync($requestArray['tags']);
         }
+        if (isset($requestArray['playlist']) && !empty($requestArray['playlist'])) {
+          $row->playlists()->sync($requestArray['playlist']);
+        }
+
     }
 
     protected function uploadImage($request,$id)
@@ -115,6 +122,9 @@ class Videos extends BackEndController
             }
             foreach ($video->skills as $skill) {
                  $skill->pivot->delete();
+            }
+            foreach ($video->playlists as $playlist) {
+                $playlist->pivot->delete();
             }
             Storage::disk('public')->delete($video->photos->src);
             $video->photos->delete();

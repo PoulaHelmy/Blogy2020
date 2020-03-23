@@ -43,10 +43,10 @@ class Playlist extends Model
     }
     public function posts()
     {
-        return $this->morphToMany(\App\Models\Post::class, 'playlistable');
+        return $this->morphedByMany(\App\Models\Post::class, 'playlistable');
     }
     public function videos()
     {
-        return $this->morphToMany(\App\Models\Post::class, 'playlistable');
+        return $this->morphedByMany(\App\Models\Video::class, 'playlistable');
     }
 }

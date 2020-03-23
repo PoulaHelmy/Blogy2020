@@ -31,6 +31,9 @@
                         Name
                     </th>
                     <th>
+                        PlayList
+                    </th>
+                    <th>
                         Category
                     </th>
                     <th>
@@ -48,6 +51,11 @@
                         </td>
                         <td>
                             {{ $row->name }}
+                        </td>
+                        <td>
+                            @foreach($row->playlists as $play)
+                            {{ $play->name }}
+                            @endforeach
                         </td>
                         <td>
                             {{ $row->cat->name }}

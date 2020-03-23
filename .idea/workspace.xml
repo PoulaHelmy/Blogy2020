@@ -3,17 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="25851794-3449-4d43-815b-a620490a8e24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Comments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Playlists.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Playlists.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Videos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Videos.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Playlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Playlist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Skill.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Skill.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/playlists/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/playlists/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/posts/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/posts/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/shared/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/shared/table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,16 +142,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeds" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/back-end/trashed" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app\Models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\trashed" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\database\seeds" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end" />
-      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\trashed" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\Trashed" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\layout" />
     </key>
@@ -176,7 +177,9 @@
       <workItem from="1584638334315" duration="10527000" />
       <workItem from="1584807289047" duration="9554000" />
       <workItem from="1584904377686" duration="15447000" />
-      <workItem from="1584928277209" duration="3940000" />
+      <workItem from="1584928277209" duration="7364000" />
+      <workItem from="1584940665152" duration="1519000" />
+      <workItem from="1584984788676" duration="3478000" />
     </task>
     <servers />
   </component>
@@ -201,10 +204,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="402" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584930991621" />
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584931333732">
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584933689139">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584931333732" />
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584933689139" />
     <state x="308" y="0" width="1043" height="738" key="CommitChangelistDialog2" timestamp="1584597536524">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -225,9 +228,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584634095431" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1584932069074">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1584986838078">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584932069074" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584934138327" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1584986838078" />
   </component>
 </project>

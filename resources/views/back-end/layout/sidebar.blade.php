@@ -26,6 +26,18 @@
                     <p>Playlists</p>
                 </a>
             </li>
+            <li class="nav-item {{ is_active('videos') }}">
+                <a  class="nav-link"  href="{{ route('videos.index') }}">
+                    <i class="material-icons">video_call</i>
+                    <p>Videos</p>
+                </a>
+            </li>
+            <li class="nav-item {{ is_active('posts') }}">
+                <a  class="nav-link"  href="{{ route('posts.index') }}">
+                    <i class="material-icons">book</i>
+                    <p>Posts</p>
+                </a>
+            </li>
             <li class="nav-item {{ is_active('categories') }}">
                 <a  class="nav-link"  href="{{ route('categories.index') }}">
                     <i class="material-icons">bubble_chart</i>
@@ -47,17 +59,26 @@
                 </a>
             </li>
 
-            <li class="nav-item {{ is_active('pages') }}">
-                <a  class="nav-link"  href="{{ route('pages.index') }}">
-                    <i class="material-icons">content_paste</i>
-                    <p>Pages</p>
-                </a>
-            </li>
+{{--            <li class="nav-item {{ is_active('pages') }}">--}}
+{{--                <a  class="nav-link"  href="{{ route('pages.index') }}">--}}
+{{--                    <i class="material-icons">content_paste</i>--}}
+{{--                    <p>Pages</p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
 
-            <li class="nav-item {{ is_active('videos') }}">
-                <a  class="nav-link"  href="{{ route('videos.index') }}">
-                    <i class="material-icons">video_call</i>
-                    <p>Videos</p>
+
+
+{{--            <li class="nav-item {{ is_active('messages') }}">--}}
+{{--                <a  class="nav-link"  href="{{ route('messages.index') }}">--}}
+{{--                    <i class="material-icons">cloud</i>--}}
+{{--                    <p>Messages</p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+
+            <li class="nav-item {{ is_active('trashedplaylists') }}">
+                <a  class="nav-link"  href="{{ route('trashedplaylists.index') }}">
+                    <i class="material-icons">delete</i>
+                    <p>Trashed Playlists</p>
                 </a>
             </li>
             <li class="nav-item {{ is_active('trashedvideos') }}">
@@ -66,25 +87,13 @@
                     <p>Trashed Videos</p>
                 </a>
             </li>
-            <li class="nav-item {{ is_active('posts') }}">
-                <a  class="nav-link"  href="{{ route('posts.index') }}">
-                    <i class="material-icons">book</i>
-                    <p>Posts</p>
-                </a>
-            </li>
+
             <li class="nav-item {{ is_active('trashedposts') }}">
                 <a  class="nav-link"  href="{{ route('trashedposts.index') }}">
                     <i class="material-icons">delete</i>
                     <p>Trashed Posts</p>
                 </a>
             </li>
-            <li class="nav-item {{ is_active('messages') }}">
-                <a  class="nav-link"  href="{{ route('messages.index') }}">
-                    <i class="material-icons">cloud</i>
-                    <p>Messages</p>
-                </a>
-            </li>
-
 
             <!-- your sidebar here -->
         </ul>

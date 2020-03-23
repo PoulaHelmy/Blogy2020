@@ -31,6 +31,9 @@
                         Name
                     </th>
                     <th>
+                        PlayList
+                    </th>
+                    <th>
                         published
                     </th>
                     <th>
@@ -51,6 +54,11 @@
                         </td>
                         <td>
                             {{ $row->name }}
+                        </td>
+                        <td>
+                            @foreach($row->playlists as $play)
+                                {{ $play->name }}
+                            @endforeach
                         </td>
                         <td>
                             @if($row->published == 1)

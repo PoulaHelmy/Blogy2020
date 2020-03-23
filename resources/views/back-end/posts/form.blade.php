@@ -27,7 +27,22 @@
             @enderror
         </div>
     </div>
-
+    @php $input = "playlist"; @endphp
+    <div class="col-md-12 my-4">
+        <div class="form-group bmd-form-group">
+            <label class="bmd-label-floating">Playlist</label>
+            <select  style="font-color:#000;" name="{{$input}}" class="form-control js-example-basic-single @error($input) is-invalid @enderror">
+                @foreach($playlists  as $playlist)
+                    <option style="font-color:#000;"  value="{{ $playlist->id }}" {{ isset($row) && $row->{$input} == $playlist->id ? 'selected'  :'' }}>{{ $playlist->name }}</option>
+                @endforeach
+            </select>
+            @error($input)
+            <span class="invalid-feedback" role="alert">
+                   <strong>{{ $message }}</strong>
+             </span>
+            @enderror
+        </div>
+    </div>
 
     @php $input = "cat_id"; @endphp
     <div class="col-md-12 my-4">

@@ -90,6 +90,8 @@ class Playlists extends BackEndController
         );
         return $photo;
     }
+
+
     public function trashed(){
         $rows=Playlist::onlyTrashed()->paginate(10);
         $moduleName = $this->pluralModelName();
@@ -103,7 +105,7 @@ class Playlists extends BackEndController
         ));
     }
 
-    public function destroyvideo($id){
+    public function destroyplaylist($id){
         $playlist=Playlist::withTrashed()->firstWhere('id','=',$id);
         if($playlist->trashed())
         {
@@ -123,7 +125,7 @@ class Playlists extends BackEndController
         return $this->trashed();
     }
 
-    public function restorevideo($id){
+    public function restoreplaylist($id){
         $playlist=Playlist::withTrashed()->firstWhere('id','=',$id)->restore();
         return $this->trashed();
     }

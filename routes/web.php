@@ -17,11 +17,10 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::resource('categories', 'Categories');
     Route::resource('skills', 'Skills');
     Route::resource('tags', 'Tags');
-    Route::resource('pages', 'Pages');
     Route::resource('videos', 'Videos');
     Route::resource('posts', 'Posts');
     Route::resource('playlists', 'Playlists');
-    Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
+
 
     Route::post('videocomments', 'Comments@store')->name('videoscomment.store');
     Route::get('videocomments/{id}', 'Comments@delete')->name('videoscomment.delete');
@@ -36,7 +35,6 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::post('playlistcomments/{id}', 'Comments@playlistupdate')->name('playlistscomment.update');
 
 
-    Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
 
 
     Route::get('/trashedvideos', 'Videos@trashed')->name('trashedvideos.index');
@@ -48,9 +46,12 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::get('/restoredposts/{id}', 'Posts@restorepost')->name('trashedposts.restore');
 
     Route::get('/trashedplaylists', 'Playlists@trashed')->name('trashedplaylists.index');
-    Route::get('/trashedplaylists/{id}', 'Playlists@destroypost')->name('trashedplaylists.destroy');
-    Route::get('/restoredplaylists/{id}', 'Playlists@restorepost')->name('trashedplaylists.restore');
+    Route::get('/trashedplaylists/{id}', 'Playlists@destroyplaylist')->name('trashedplaylists.destroy');
+    Route::get('/restoredplaylists/{id}', 'Playlists@restoreplaylist')->name('trashedplaylists.restore');
 
+    //Route::resource('pages', 'Pages');
+    //Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
+    //Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
 
 });
 
