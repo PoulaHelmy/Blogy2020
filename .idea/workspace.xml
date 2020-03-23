@@ -2,27 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25851794-3449-4d43-815b-a620490a8e24" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/blogy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blogy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/BackEndController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/BackEndController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Comments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Tags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Videos.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Videos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Posts/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Posts/Store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Videos/Store.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BackEnd/Videos/Store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/comments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/comments/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/comments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/comments/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/side-bar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/shared/buttons/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/shared/buttons/delete.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_23_010733_create_playlists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_23_010733_create_playlists_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +120,8 @@
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/santigarcor/laratrust" />
+      <path value="$PROJECT_DIR$/vendor/kkszymanowski/traitor" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZK35eAdLbzmfbGGalTvrM2YHjJ" />
@@ -181,7 +171,8 @@
       <workItem from="1584595418778" duration="1997000" />
       <workItem from="1584638334315" duration="10527000" />
       <workItem from="1584807289047" duration="9554000" />
-      <workItem from="1584904377686" duration="14644000" />
+      <workItem from="1584904377686" duration="15447000" />
+      <workItem from="1584928277209" duration="1069000" />
     </task>
     <servers />
   </component>

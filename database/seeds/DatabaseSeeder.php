@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             Skills::class,
             Tags::class,
             Videos::class,
-            Posts::class
+            Posts::class,
+            LaratrustSeeder::class
         ]);
     }
 }
