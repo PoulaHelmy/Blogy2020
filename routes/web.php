@@ -17,11 +17,10 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::resource('categories', 'Categories');
     Route::resource('skills', 'Skills');
     Route::resource('tags', 'Tags');
-    Route::resource('pages', 'Pages');
+
     Route::resource('videos', 'Videos');
     Route::resource('posts', 'Posts');
     Route::resource('playlists', 'Playlists');
-    Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
 
     Route::post('videocomments', 'Comments@store')->name('videoscomment.store');
     Route::get('videocomments/{id}', 'Comments@delete')->name('videoscomment.delete');
@@ -36,22 +35,23 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::post('playlistcomments/{id}', 'Comments@playlistupdate')->name('playlistscomment.update');
 
 
-    Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
 
 
-    Route::get('/trashedvideos', 'Videos@trashed')->name('trashedvideos.index');
-    Route::get('/trashedvideos/{id}', 'Videos@destroyvideo')->name('trashedvideos.destroy');
-    Route::get('/restoredvideo/{id}', 'Videos@restorevideo')->name('trashedvideos.restore');
+    Route::get('/trashedvideos', 'Videos@trashedItem')->name('trashedvideos.index');
+    Route::get('/trashedvideos/{id}', 'Videos@destroyTrash')->name('trashedvideos.destroy');
+    Route::get('/restoredvideo/{id}', 'Videos@restore')->name('trashedvideos.restore');
 
-    Route::get('/trashedposts', 'Posts@trashed')->name('trashedposts.index');
-    Route::get('/trashedposts/{id}', 'Posts@destroypost')->name('trashedposts.destroy');
-    Route::get('/restoredposts/{id}', 'Posts@restorepost')->name('trashedposts.restore');
+    Route::get('/trashedposts', 'Posts@trashedItem')->name('trashedposts.index');
+    Route::get('/trashedposts/{id}', 'Posts@destroyTrash')->name('trashedposts.destroy');
+    Route::get('/restoredposts/{id}', 'Posts@restore')->name('trashedposts.restore');
 
-    Route::get('/trashedplaylists', 'Playlists@trashed')->name('trashedplaylists.index');
-    Route::get('/trashedplaylists/{id}', 'Playlists@destroypost')->name('trashedplaylists.destroy');
-    Route::get('/restoredplaylists/{id}', 'Playlists@restorepost')->name('trashedplaylists.restore');
-
-
+    Route::get('/trashedplaylists', 'Playlists@trashedItem')->name('trashedplaylists.index');
+    Route::get('/trashedplaylists/{id}', 'Playlists@destroyTrash')->name('trashedplaylists.destroy');
+    Route::get('/restoredplaylists/{id}', 'Playlists@restore')->name('trashedplaylists.restore');
+//    Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
+//    Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
+//
+//    Route::resource('pages', 'Pages');
 });
 
 Auth::routes();
@@ -66,6 +66,11 @@ Route::get('/', 'HomeController@welcome')->name('frontend.landing');
 Route::get('page/{id}/{slug?}', 'HomeController@page')->name('front.page');
 Route::get('profile/{id}/{slug?}', 'HomeController@profile')->name('front.profile');
 
+Route::get('test', function (){
+//
+    $trashed=true;
+    echo ($trashed?? '')?'trashed':'pola';
+});
 
 
 

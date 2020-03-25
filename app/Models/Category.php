@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Post;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -12,14 +12,14 @@ class Category extends Model
     ];
     public function posts()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(\App\Models\Post::class);
     }
     public function vedios()
     {
-        return $this->belongsTo(Video::class);
+        return $this->belongsTo(\App\Models\Video::class);
     }
     public function playlists()
     {
-        return $this->belongsTo(Playlist::class);
+        return $this->belongsTo(\App\Models\Playlist::class);
     }
 }

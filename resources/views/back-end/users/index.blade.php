@@ -6,18 +6,20 @@
 
 @section('content')
 
-    @component('back-end.layout.header')
+    @component('back-end.layout.header',['folderName'=>$folderName,'trashed'=>''])
         @slot('nav_title')
             {{ $pageTitle }}
         @endslot
     @endcomponent
 
-    @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes])
+    @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes,'total'=>$rows->total()])
         @slot('addButton')
             <div class="col-md-4 text-right">
-                <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
-                    Add {{ $sModuleName }}
-                </a>
+               @if(auth()->user()->hasPermission('create_users'))
+                    <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
+                        Add {{ $sModuleName }}
+                    </a>
+               @endif
             </div>
         @endslot
         <div class="table-responsive">
@@ -25,7 +27,10 @@
                 <thead class=" text-primary">
                 <tr>
                     <th>
-                        ID
+                        #
+                    </th>
+                    <th>
+                        Item ID
                     </th>
                     <th>
                         Name
@@ -38,9 +43,12 @@
                     </th>
                 </tr></thead>
                 <tbody>
-                @foreach($rows as $row)
+                @foreach($rows as $index=>$row)
                     <tr>
-                        <td>
+                        <td >
+                            {{$index+($rows->currentPage()*10-10) +1}}
+                        </td>
+                        <td >
                             {{ $row->id }}
                         </td>
                         <td>
@@ -50,14 +58,20 @@
                             {{ $row->email }}
                         </td>
                         <td class="td-actions text-right">
-                            @include('back-end.shared.buttons.edit')
-                            @include('back-end.shared.buttons.delete')
+                            @if(auth()->user()->hasPermission('update_users'))
+                                @include('back-end.shared.buttons.edit')
+                            @endif
+                            @if(auth()->user()->hasPermission('delete_users'))
+                                @include('back-end.shared.buttons.delete')
+                            @endif
+
+
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            {!! $rows->links() !!}
+            {!! $rows->appends(request()->query())->links() !!}
         </div>
     @endcomponent
 @endsection

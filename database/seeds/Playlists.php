@@ -1,9 +1,7 @@
 <?php
 
-use App\Models\Photo;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
-
 class Playlists extends Seeder
 {
     /**
@@ -28,6 +26,8 @@ class Playlists extends Seeder
                 'level'=>'Middle'
             ];
             $playlist = \App\Models\Playlist::create($array);
+            $playlist->skills()->sync(array_rand($ids , 2));
+            $playlist->tags()->sync(array_rand($ids , 3));
             $photo='images/doZoaRNal3Ss6VOBLNSjQhuVNfkd8p1ZXAznrfUQ.jpeg';
             Photo::create([
                     'src'=> $photo,
@@ -35,8 +35,7 @@ class Playlists extends Seeder
                     'photoable_id'=> $playlist->id
                 ]
             );
-            $playlist->skills()->sync(array_rand($ids , 2));
-            $playlist->tags()->sync(array_rand($ids , 3));
+
         }
     }
 }

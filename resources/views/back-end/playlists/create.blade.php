@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @component('back-end.layout.header')
+    @component('back-end.layout.header',['folderName'=>$folderName,'trashed'=>''])
         @slot('nav_title')
             {{ $pageTitle }}
         @endslot

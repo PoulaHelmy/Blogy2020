@@ -16,9 +16,9 @@
                 <div class="card-header card-header-primary">
                     <div class="row">
                         <div class="col-md-8">
-                            <h4 class="card-title ">All Trashed Videos </h4>
-                            <p class="card-category">Here You Can Find And Delete All Trashed Videos
-                            <span class="badge badge-warning mx-2">{{$rows->total()}}</span></p>
+                            <h4 class="card-title ">All Trashed PlayLists </h4>
+                            <p class="card-category">Here You Can Find And Delete All Trashed PlayLists                            <span class="badge badge-warning mx-2">{{$rows->total()}}</span>
+                            </p>
                         </div>
 
                     </div>
@@ -28,6 +28,7 @@
                         <table class="table">
                             <thead class=" text-primary">
                             <tr>
+
                                 <th>
                                     #
                                 </th>
@@ -77,12 +78,12 @@
                                         {{ $row->user->name }}
                                     </td>
                                     <td class="td-actions text-right">
-                                        <a href="{{ route('trashedvideos.destroy' , ['id' => $row->id]) }}" rel="tooltip" title="" class="btn btn-white btn-link btn-sm"
-                                           data-original-title="Remove Video">
+                                        <a href="{{ route('trashedplaylists.destroy' ,  $row->id) }}" rel="tooltip" title="" class="btn btn-white btn-link btn-sm"
+                                           data-original-title="Remove PlayList">
                                             <i class="material-icons">close</i>
                                         </a>
-                                        <a href="{{ route('trashedvideos.restore' , ['id' => $row->id]) }}" rel="tooltip" title="" class="btn btn-white btn-link btn-sm"
-                                           data-original-title="Remove Video">
+                                        <a href="{{ route('trashedplaylists.restore' , $row->id) }}" rel="tooltip" title="" class="btn btn-white btn-link btn-sm"
+                                           data-original-title="Remove PlayList">
                                             <i class="material-icons">restore</i>
                                         </a>
                                     </td>

@@ -5,3 +5,4 @@
         <i class="material-icons">delete</i>
     </button>
 </form>
+<div class="clearfix"></div>

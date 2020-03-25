@@ -5,7 +5,7 @@
     <div class="col-md-6 my-4">
         <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Video Name</label>
-            <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : '' }}"
+            <input type="text" name="{{ $input }}" value="{{ isset($row) ? $row->{$input} : old("$input") }}"
                    class="form-control @error($input) is-invalid @enderror">
             @error($input)
             <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
     <div class="col-md-12 my-4">
         <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Meta keywords</label>
-            <input type="text" name="{{$input}}" value="{{ isset($row) ? $row->{$input} : '' }}"
+            <input type="text" name="{{$input}}" value="{{ isset($row) ? $row->{$input} : old("$input") }}"
                    class="form-control @error($input) is-invalid @enderror">
             @error($input)
             <span class="invalid-feedback" role="alert">
@@ -59,7 +59,7 @@
     <div class="col-md-12 my-4">
         <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Youtube url</label>
-            <input type="url" name="{{$input}}" value="{{ isset($row) ? $row->{$input} : '' }}"
+            <input type="url" name="{{$input}}" value="{{ isset($row) ? $row->{$input} : old("$input") }}"
                    class="form-control @error($input) is-invalid @enderror">
             @error($input)
             <span class="invalid-feedback" role="alert">
@@ -68,7 +68,22 @@
             @enderror
         </div>
     </div>
-
+    @php $input = "playlists[]"; @endphp
+    <div class="col-md-12 my-4">
+        <div class="form-group bmd-form-group">
+            <label class="bmd-label-floating">Video PlayList</label>
+            <select  style="font-color:#000;" name="{{$input}}" class="form-control js-example-basic-single @error($input) is-invalid @enderror">
+                @foreach($playlists  as $playlist)
+                    <option style="font-color:#000;"  value="{{ $playlist->id }}" {{ in_array( $playlist->id, $selectedPlaylists) ? 'selected' : '' }}>{{ $playlist->name }}</option>
+                @endforeach
+            </select>
+            @error($input)
+            <span class="invalid-feedback" role="alert">
+                   <strong>{{ $message }}</strong>
+             </span>
+            @enderror
+        </div>
+    </div>
     @php $input = "cat_id"; @endphp
     <div class="col-md-12 my-4">
         <div class="form-group bmd-form-group">
@@ -123,7 +138,7 @@
     <div class="col-md-12 my-4">
         <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Video Description</label>
-            <textarea name="{{ $input }}"  cols="30" rows="5" class="form-control @error($input) is-invalid @enderror">{{ isset($row) ? $row->{$input} : '' }}</textarea>
+            <textarea name="{{ $input }}"  cols="30" rows="5" class="form-control @error($input) is-invalid @enderror">{{ isset($row) ? $row->{$input} : old("$input") }}</textarea>
             @error($input)
             <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -135,7 +150,7 @@
     <div class="col-md-12 my-5">
         <div class="form-group bmd-form-group">
             <label class="bmd-label-floating">Meta Description</label>
-            <textarea name="{{ $input }}"  cols="30" rows="3" class="form-control @error($input) is-invalid @enderror">{{ isset($row) ? $row->{$input} : '' }}</textarea>
+            <textarea name="{{ $input }}"  cols="30" rows="3" class="form-control @error($input) is-invalid @enderror">{{ isset($row) ? $row->{$input} : old("$input") }}</textarea>
             @error($input)
             <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

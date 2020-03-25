@@ -1,7 +1,10 @@
+
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
     <div class="container-fluid">
         <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:void(0)">{{$nav_title}}</a>
+            <a class="navbar-brand" href="javascript:void(0)">{{$nav_title}}
+
+            </a>
             {{$slot}}
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
@@ -11,9 +14,9 @@
             <span class="navbar-toggler-icon icon-bar"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
+            <form class="navbar-form" action="{{ route($trashed.$folderName.'.index') }}" method="Get">
                 <div class="input-group no-border">
-                    <input type="text" value="" class="form-control" placeholder="Search...">
+                    <input type="text" name="search" value="{{request()->search}}" class="form-control" placeholder="Search For {{$folderName}} by Name" >
                     <button type="submit" class="btn btn-default btn-round btn-just-icon">
                         <i class="material-icons">search</i>
                         <div class="ripple-container"></div>

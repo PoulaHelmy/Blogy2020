@@ -6,13 +6,13 @@
 
 @section('content')
 
-    @component('back-end.layout.header')
+    @component('back-end.layout.header',['folderName'=>$folderName,'trashed'=>''])
         @slot('nav_title')
             {{ $pageTitle }}
         @endslot
     @endcomponent
 
-    @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes])
+    @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes,'total'=>$rows->total()])
         @slot('addButton')
             <div class="col-md-4 text-right">
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
@@ -25,23 +25,29 @@
                 <thead class=" text-primary">
                 <tr>
                     <th>
-                        ID
+                        #
+                    </th>
+                    <th>
+                        Item  ID
                     </th>
                     <th>
                         Name
                     </th>
-                    <th class="text-right">
+                    <th class="text-center">
                         control
                     </th>
                 </tr></thead>
                 <tbody>
-                @foreach($rows as $row)
+                @foreach($rows as $index=>$row)
                     <tr>
-                        <td>
+                        <td >
+                            {{$index+($rows->currentPage()*10-10) +1}}
+                        </td>
+                        <td >
                             {{ $row->id }}
                         </td>
                         <td>
-                            {{ $row->name }}
+                            <a class="badge m-1 btn-outline-primary" style="font-size: 18px;" href="{{route('skills.show',$row)}}">{{ $row->name }}</a>
                         </td>
                         <td class="td-actions text-right">
                             @include('back-end.shared.buttons.edit')
@@ -51,7 +57,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {!! $rows->links() !!}
+            {!! $rows->appends(request()->query())->links() !!}
         </div>
     @endcomponent
 @endsection

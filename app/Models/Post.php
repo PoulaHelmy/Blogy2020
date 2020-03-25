@@ -9,7 +9,8 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
-{use SoftDeletes;
+{
+    use SoftDeletes;
     protected $fillable=[
         'name',
         'des',
@@ -35,7 +36,7 @@ class Post extends Model
         return $this->morphToMany(\App\Models\Skill::class, 'skillable');
     }
     public function cat(){
-        return $this->belongsTo(Category::class,'cat_id');
+        return $this->belongsTo(\App\Models\Category::class,'cat_id');
     }
 
     public function user() {

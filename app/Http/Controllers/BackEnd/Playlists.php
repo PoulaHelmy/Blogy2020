@@ -90,41 +90,9 @@ class Playlists extends BackEndController
         );
         return $photo;
     }
-    public function trashed(){
-        $rows=Playlist::onlyTrashed()->paginate(10);
-        $moduleName = $this->pluralModelName();
-        $sModuleName = $this->getModelName();
-        $routeName = $this->getClassNameFromModel();
-        return view('back-end.trashed.playlistsIndex', compact(
-            'rows',
-            'moduleName',
-            'sModuleName',
-            'routeName'
-        ));
-    }
 
-    public function destroyvideo($id){
-        $playlist=Playlist::withTrashed()->firstWhere('id','=',$id);
-        if($playlist->trashed())
-        {
-            foreach ($playlist->tags as $tag) {
-                $tag->pivot->delete();
-            }
-            foreach ($playlist->skills as $skill) {
-                $skill->pivot->delete();
-            }
-            Storage::disk('public')->delete($playlist->photos->src);
-            $playlist->photos->delete();
-            $playlist->forceDelete();
 
-        }
-        else
-            $playlist->delete();
-        return $this->trashed();
-    }
 
-    public function restorevideo($id){
-        $playlist=Playlist::withTrashed()->firstWhere('id','=',$id)->restore();
-        return $this->trashed();
-    }
+
+
 }

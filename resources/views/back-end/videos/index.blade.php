@@ -6,13 +6,13 @@
 
 @section('content')
 
-    @component('back-end.layout.header')
+    @component('back-end.layout.header',['folderName'=>$folderName,'trashed'=>''])
         @slot('nav_title')
             {{ $pageTitle }}
         @endslot
     @endcomponent
 
-    @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes])
+    @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes,'total'=>$rows->total()])
         @slot('addButton')
             <div class="col-md-4 text-right">
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
@@ -25,32 +25,50 @@
                 <thead class=" text-primary">
                 <tr>
                     <th>
-                        ID
+                        #
+                    </th>
+                    <th>
+                        Item ID
                     </th>
                     <th>
                         Name
                     </th>
                     <th>
-                        published
+                        PlayList
                     </th>
                     <th>
                         Category
                     </th>
                     <th>
+                        published
+                    </th>
+
+                    <th>
                         User
                     </th>
-                    <th class="text-right">
+                    <th class="text-center">
                         control
                     </th>
                 </tr></thead>
                 <tbody>
-                @foreach($rows as $row)
+                @foreach($rows as $index=>$row)
                     <tr>
-                        <td>
+                        <td class="text-light">
+                            {{$index+($rows->currentPage()*10-10) +1}}
+                        </td>
+                        <td class="text-center">
                             {{ $row->id }}
                         </td>
                         <td>
-                            {{ $row->name }}
+                            <a class="badge m-1 btn-outline-primary" rel="tooltip" data-original-title="Show {{ $sModuleName }}"style="font-size: 18px;" href="{{route('videos.show',$row)}}">{{ $row->name }}</a>
+                        </td>
+                        <td>
+                            @foreach($row->playlists as $play)
+                                <a class="badge m-1 btn-outline-warning" rel="tooltip" data-original-title="Show Playlist" style="font-size: 18px;" href="{{route('playlists.show',$play)}}">  {{ $play->name }}</a>
+                            @endforeach
+                        </td>
+                        <td>
+                            <a class="badge m-1 btn-outline-success" rel="tooltip" data-original-title="Show Category" style="font-size: 18px;" href="{{route('categories.show',$row->cat->id)}}">  {{ $row->cat->name }}</a>
                         </td>
                         <td>
                             @if($row->published == 1)
@@ -59,21 +77,20 @@
                                 hidden
                             @endif
                         </td>
-                        <td>
-                            {{ $row->cat->name }}
-                        </td>
+
                         <td>
                             {{ $row->user->name }}
                         </td>
                         <td class="td-actions text-right">
                             @include('back-end.shared.buttons.edit')
                             @include('back-end.shared.buttons.softDelete')
+
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
-            {!! $rows->links() !!}
+            {!! $rows->appends(request()->query())->links() !!}
         </div>
     @endcomponent
 @endsection

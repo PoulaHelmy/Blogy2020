@@ -25,4 +25,8 @@ class Categories extends BackEndController
 
         return redirect()->route('categories.index');
     }
+//    public function show(Category $category)
+//    {
+//        return view('back-end.categories.show',compact('category'));
+//    }
 }

@@ -11,11 +11,13 @@ class Users extends Seeder
      */
     public function run()
     {
-        \App\Models\User::create([
-            'name'=> 'admin',
-            'email' => 'admin@website.com',
+        $user=\App\Models\User::create([
+            'name'=> 'SuperAdmin',
+            'email' => 'superadmin@website.com',
             'password' => bcrypt('123456'),
-            'group' => 'admin'
         ]);
+
+        $user->attachRole('super_admin');
+
     }
 }

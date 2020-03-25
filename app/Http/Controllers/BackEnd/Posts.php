@@ -6,6 +6,7 @@ use App\Http\Requests\BackEnd\Posts\Store;
 use App\Http\Requests\BackEnd\Posts\Update;
 use App\Models\Category;
 use App\Models\Photo;
+use App\Models\Playlist;
 use App\Models\Post;
 use App\Models\Skill;
 use App\Models\Tag;
@@ -30,7 +31,9 @@ class Posts extends BackEndController
             'tags' => Tag::get(),
             'selectedSkills' => [],
             'selectedTags' => [],
-            'comments' => []
+            'comments' => [],
+            'playlists'=>Playlist::get(),
+            'selectedPlaylists'=>[]
         ];
         if(request()->route()->parameter('post')){
             $array['selectedSkills']  = $this->model->find(request()->route()->parameter('post'))
@@ -39,6 +42,8 @@ class Posts extends BackEndController
                 ->tags()->pluck('tags.id')->toArray();
             $array['comments']  = $this->model->find(request()->route()->parameter('post'))
                 ->comments()->orderBy('id' , 'desc')->with('user')->get();
+            $array['selectedPlaylists']  = $this->model->find(request()->route()->parameter('post'))
+                ->playlists()->pluck('playlists.id')->toArray();
         }
         return $array;
     }
@@ -75,6 +80,9 @@ class Posts extends BackEndController
         if (isset($requestArray['tags']) && !empty($requestArray['tags'])) {
             $row->tags()->sync($requestArray['tags']);
         }
+        if (isset($requestArray['playlists']) && !empty($requestArray['playlists'])) {
+            $row->playlists()->sync($requestArray['playlists']);
+        }
     }
 
     protected function uploadImage($request,$id)
@@ -87,41 +95,9 @@ class Posts extends BackEndController
         );
         return $photo;
     }
-    public function trashed(){
-        $rows=Post::onlyTrashed()->paginate(10);
-        $moduleName = $this->pluralModelName();
-        $sModuleName = $this->getModelName();
-        $routeName = $this->getClassNameFromModel();
-        return view('back-end.trashed.postsIndex', compact(
-            'rows',
-            'moduleName',
-            'sModuleName',
-            'routeName'
-        ));
-    }
 
-    public function destroypost($id){
-        $post=Post::withTrashed()->firstWhere('id','=',$id);
-        if($post->trashed())
-        {
-            foreach ($post->tags as $tag) {
-                $tag->pivot->delete();
-            }
-            foreach ($post->skills as $skill) {
-                $skill->pivot->delete();
-            }
-            Storage::disk('public')->delete($post->photos->src);
-            $post->photos->delete();
-            $post->forceDelete();
 
-        }
-        else
-            $post->delete();
-        return $this->trashed();
-    }
 
-    public function restorepost($id){
-        $post=Post::withTrashed()->firstWhere('id','=',$id)->restore();
-        return $this->trashed();
-    }
+
+
 }

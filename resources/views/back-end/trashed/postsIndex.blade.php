@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    @component('back-end.layout.header')
+    @component('back-end.layout.header',['folderName'=>$folderName,'trashed'=>"trashed"])
         @slot('nav_title')
             Trashed Items
         @endslot
@@ -17,7 +17,8 @@
                     <div class="row">
                         <div class="col-md-8">
                             <h4 class="card-title ">All Trashed Posts </h4>
-                            <p class="card-category">Here You Can Find And Delete All Trashed Posts</p>
+                            <p class="card-category">Here You Can Find And Delete All Trashed Posts
+                            <span class="badge badge-warning mx-2">{{$rows->total()}}</span></p>
                         </div>
 
                     </div>
@@ -28,7 +29,10 @@
                             <thead class=" text-primary">
                             <tr>
                                 <th>
-                                    ID
+                                    #
+                                </th>
+                                <th>
+                                    Item  ID
                                 </th>
                                 <th>
                                     Name
@@ -44,10 +48,14 @@
                                 </th>
                             </tr></thead>
                             <tbody>
-                            @foreach($rows as $row)
+                            <tbody>
+                            @foreach($rows as $index => $row)
                                 <tr>
-                                    <td>
-                                        {{ $row->id }}
+                                    <td >
+                                        {{$index+($rows->currentPage()*10-10) +1}}
+                                    </td>
+                                    <td >
+                                        {{$row->id}}
                                     </td>
                                     <td>
                                         {{ $row->name }}
@@ -73,7 +81,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {!! $rows->links() !!}
+                        {!! $rows->appends(request()->query())->links() !!}
                     </div>
                 </div>
             </div>

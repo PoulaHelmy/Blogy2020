@@ -26,12 +26,18 @@ class Store extends FormRequest
         return [
             'name' => ['required', 'max:191'],
             'meta_keywords' => ['max:191'],
-            'meta_des' => [],
+            'meta_des' => ['required' ,'required'],
             'des' => ['required' , 'min:10'],
             'cat_id' => ['required'  ,'integer' ],
             'published' => ['required' ],
             'image'=>['required','image' ],
-            'level'=>['required','string']
+            'level'=>['required','string'],
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'cat_id.required' => 'A Category is required',
         ];
     }
 }

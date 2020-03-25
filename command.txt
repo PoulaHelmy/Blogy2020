@@ -1,0 +1,2 @@
+when use search tha paganation is fail so use
+$users->append(request()->query())->links()
