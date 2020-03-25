@@ -24,9 +24,7 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'max:191'],
-            'taggable_id'=>['required'],
-            'taggable_type'=>['required']
+            'name' => ['required', 'max:191']
         ];
     }
 }

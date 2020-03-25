@@ -22,7 +22,6 @@ class CreatePlaylistsTable extends Migration
             $table->string('meta_des');
             $table->boolean('published')->default(1);
             $table->integer('user_id');
-            $table->integer('cat_id');
             $table->softDeletes();
             $table->timestamps();
         });

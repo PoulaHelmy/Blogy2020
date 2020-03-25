@@ -12,14 +12,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            //LaratrustSeeder::class,
-          // Users::class,
+//            LaratrustSeeder::class,
+//            Users::class,
             Categories::class,
             Skills::class,
             Tags::class,
             Videos::class,
             Posts::class,
-         //   Playlists::class,
+            Playlists::class,
 
         ]);
     }

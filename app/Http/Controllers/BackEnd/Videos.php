@@ -22,6 +22,8 @@ class Videos extends BackEndController
     public function __construct(Video $model)
     {
         parent::__construct($model);
+        $this->middleware(['checkCategory','checkSkill','checkTag','checkPlaylist'])->only('create');
+
     }
 
 
@@ -87,6 +89,9 @@ class Videos extends BackEndController
         }
         if (isset($requestArray['playlists']) && !empty($requestArray['playlists'])) {
             $row->playlists()->sync($requestArray['playlists']);
+        }
+        if (isset($requestArray['cat_id']) && !empty($requestArray['cat_id'])) {
+            $row->cat()->sync($requestArray['cat_id']);
         }
 
     }

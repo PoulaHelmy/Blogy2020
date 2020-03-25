@@ -10,7 +10,6 @@ class Playlist extends Model
 
     protected $fillable=[
         'name',
-        'cat_id',
         'user_id',
         'level',
         'des' ,
@@ -38,8 +37,9 @@ class Playlist extends Model
         return $this->belongsTo(\App\Models\User::class , 'user_id');
     }
 
-    public function cat(){
-        return $this->belongsTo(\App\Models\Category::class , 'cat_id');
+    public function cat()
+    {
+        return $this->morphToMany(\App\Models\Category::class, 'categorable');
     }
     public function posts()
     {

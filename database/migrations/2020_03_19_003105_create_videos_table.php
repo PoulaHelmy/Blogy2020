@@ -22,7 +22,6 @@ class CreateVideosTable extends Migration
             $table->string('youtube');
             $table->boolean('published')->default(1);
             $table->integer('user_id');
-            $table->integer('cat_id');
             $table->softDeletes();
             $table->timestamps();
         });

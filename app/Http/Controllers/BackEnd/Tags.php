@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Tags\Store;
 use App\Models\Tag;
-use Illuminate\Http\Request;
 
 class Tags extends BackEndController
 {
     public function __construct(Tag $model)
     {
         parent::__construct($model);
+        $this->middleware(['CheckBeforeDeleteTag'])->only('destroy');
+
     }
 
     public function store(Store $request){
+
         $this->model->create($request->all());
 
         return redirect()->route('tags.index');

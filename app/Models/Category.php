@@ -10,16 +10,16 @@ class Category extends Model
     protected $fillable = [
         'name' , 'meta_keywords' , 'meta_des'
     ];
+    public function videos()
+    {
+        return $this->morphedByMany(\App\Models\Video::class, 'categorable');
+    }
     public function posts()
     {
-        return $this->belongsTo(\App\Models\Post::class);
-    }
-    public function vedios()
-    {
-        return $this->belongsTo(\App\Models\Video::class);
+        return $this->morphedByMany(\App\Models\Post::class, 'categorable');
     }
     public function playlists()
     {
-        return $this->belongsTo(\App\Models\Playlist::class);
+        return $this->morphedByMany(\App\Models\Playlist::class, 'categorable');
     }
 }

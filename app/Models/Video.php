@@ -13,7 +13,6 @@ class Video extends Model
         'meta_des' ,
         'meta_keywords' ,
         'youtube' ,
-        'cat_id' ,
         'user_id' ,
         'published'
     ];
@@ -37,10 +36,10 @@ class Video extends Model
         return $this->belongsTo(User::class , 'user_id');
     }
 
-    public function cat(){
-        return $this->belongsTo(Category::class , 'cat_id');
+    public function cat()
+    {
+        return $this->morphToMany(\App\Models\Category::class, 'categorable');
     }
-
     public function playlists()
     {
         return $this->morphToMany(\App\Models\Playlist::class, 'playlistable');

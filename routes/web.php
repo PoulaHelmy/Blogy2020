@@ -17,7 +17,6 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::resource('categories', 'Categories');
     Route::resource('skills', 'Skills');
     Route::resource('tags', 'Tags');
-
     Route::resource('videos', 'Videos');
     Route::resource('posts', 'Posts');
     Route::resource('playlists', 'Playlists');
@@ -48,6 +47,7 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::get('/trashedplaylists', 'Playlists@trashedItem')->name('trashedplaylists.index');
     Route::get('/trashedplaylists/{id}', 'Playlists@destroyTrash')->name('trashedplaylists.destroy');
     Route::get('/restoredplaylists/{id}', 'Playlists@restore')->name('trashedplaylists.restore');
+
 //    Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
 //    Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
 //
@@ -67,12 +67,30 @@ Route::get('page/{id}/{slug?}', 'HomeController@page')->name('front.page');
 Route::get('profile/{id}/{slug?}', 'HomeController@profile')->name('front.profile');
 
 Route::get('test', function (){
-//
-    $trashed=true;
-    echo ($trashed?? '')?'trashed':'pola';
+
+    $a=App\Models\Post::find(2);
+    $b=App\Models\Video::find(2);
+    $c=App\Models\Playlist::find(2);
+
+    $z=App\Models\Category::find(2);
+//    echo $a."<br><br><br><br>";
+   echo $b."<br><br><br><br>";
+//    echo $c."<br><br><br><br>";
+//    echo $z."<br><br><br><br>";
+    foreach ($z->posts as $cc)
+    {
+        echo $cc->name."<br><br><br><br>";
+    }
+    foreach ($z->videos as $cc)
+    {
+        echo $cc->name."<br><br><br><br>";
+    }
+    foreach ($z->playlists as $cc)
+    {
+        echo $cc->name."<br><br><br><br>";
+    }
+    echo $z->playlists->count()."<br><br><br><br>";
+
 });
-
-
-
 
 

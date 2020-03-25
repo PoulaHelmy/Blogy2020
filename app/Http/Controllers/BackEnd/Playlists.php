@@ -18,6 +18,9 @@ class Playlists extends BackEndController
     public function __construct(Playlist $model)
     {
         parent::__construct($model);
+        $this->middleware(['checkCategory','checkSkill','checkTag'])->only('create');
+        $this->middleware(['CheckBeforeDeletePlaylist'])->only('destroy');
+
     }
     protected function with()
     {
@@ -77,6 +80,9 @@ class Playlists extends BackEndController
         }
         if (isset($requestArray['tags']) && !empty($requestArray['tags'])) {
             $row->tags()->sync($requestArray['tags']);
+        }
+        if (isset($requestArray['cat_id']) && !empty($requestArray['cat_id'])) {
+            $row->cat()->sync($requestArray['cat_id']);
         }
     }
 

@@ -27,6 +27,8 @@ class Store extends FormRequest
             'name' => ['required', 'max:191'],
             'meta_keywords' => ['max:191'],
             'meta_des' => ['max:191'],
+
+
         ];
     }
 }

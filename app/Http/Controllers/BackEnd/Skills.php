@@ -12,6 +12,8 @@ class Skills extends BackEndController
     public function __construct(Skill $model)
     {
         parent::__construct($model);
+        $this->middleware(['CheckBeforeDeleteSkill'])->only('destroy');
+
     }
 
     public function store(Store $request){

@@ -17,7 +17,6 @@ class Posts extends Seeder
         for($i = 0 ;$i< 10 ;$i++){
             $array = [
                 'name' => $faker->word,
-                'cat_id' => 1,
                 'des' => $faker->paragraph,
                 'content' => $faker->paragraph,
                 'user_id' => 1

@@ -11,6 +11,9 @@ class Categories extends BackEndController
     public function __construct(Category $model)
     {
         parent::__construct($model);
+        $this->middleware(['CheckBeforeDeleteCategory'])->only('destroy');
+
+
     }
 
     public function store(\App\Http\Requests\BackEnd\Categoires\Store $request){

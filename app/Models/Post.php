@@ -15,7 +15,6 @@ class Post extends Model
         'name',
         'des',
         'content',
-        'cat_id',
         'user_id'];
 
     public function photos(){
@@ -35,8 +34,9 @@ class Post extends Model
     {
         return $this->morphToMany(\App\Models\Skill::class, 'skillable');
     }
-    public function cat(){
-        return $this->belongsTo(\App\Models\Category::class,'cat_id');
+    public function cat()
+    {
+        return $this->morphToMany(\App\Models\Category::class, 'categorable');
     }
 
     public function user() {

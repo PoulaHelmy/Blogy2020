@@ -1,4 +1,5 @@
 <?php
+use App\Models\Photo;
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
@@ -19,7 +20,6 @@ class Playlists extends Seeder
                 'name' => $faker->word,
                 'meta_keywords' => $faker->name,
                 'meta_des' => $faker->name,
-                'cat_id' => 1,
                 'published' => rand(0,1),
                 'des' => $faker->paragraph,
                 'user_id' => 1,

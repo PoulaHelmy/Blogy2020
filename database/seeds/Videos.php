@@ -31,7 +31,6 @@ class Videos extends Seeder
                 'name' => $faker->word,
                 'meta_keywords' => $faker->name,
                 'meta_des' => $faker->name,
-                'cat_id' => 1,
                 'youtube' => $youtube[rand(0,3)],
                 'published' => rand(0,1),
                 'des' => $faker->paragraph,

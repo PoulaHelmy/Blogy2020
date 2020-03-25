@@ -186,7 +186,9 @@ class BackEndController extends Controller
             foreach ($row->skills as $skill) {
                 $skill->pivot->delete();
             }
-
+        foreach ($row->cat as $cc) {
+            $cc->pivot->delete();
+        }
             if($this->getModelName()=="Video"||$this->getModelName()=="Post")
             {
 

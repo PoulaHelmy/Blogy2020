@@ -60,7 +60,9 @@
                             <a class="badge m-1 btn-outline-primary"rel="tooltip" data-original-title="Show {{ $sModuleName }}" style="font-size: 18px;" href="{{route('playlists.show',$row)}}">{{ $row->name }}</a>
                         </td>
                         <td>
-                            <a class="badge m-1 btn-outline-success" rel="tooltip" data-original-title="Show Category" style="font-size: 18px;" href="{{route('categories.show',$row->cat->id)}}">  {{ $row->cat->name }}</a>
+                            @foreach($row->cat as $play)
+                                <a class="badge m-1 btn-outline-success" rel="tooltip" data-original-title="Show Category" style="font-size: 18px;" href="{{route('categories.show',$play)}}">  {{ $play->name }}</a>
+                            @endforeach
                         </td>
                         <td>
                             @if($row->published == 1)
