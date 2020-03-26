@@ -61,6 +61,16 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'checkCategory' => \App\Http\Middleware\CheckCategory::class,
+        'checkTag' => \App\Http\Middleware\CheckTag::class,
+        'checkSkill' => \App\Http\Middleware\CheckSkill::class,
+        'checkPlaylist' => \App\Http\Middleware\CheckPlaylist::class,
+        'CheckBeforeDeleteCategory' => \App\Http\Middleware\CheckBeforeDeleteCategory::class,
+        'CheckBeforeDeleteSkill' => \App\Http\Middleware\CheckBeforeDeleteSkill::class,
+        'CheckBeforeDeleteTag' => \App\Http\Middleware\CheckBeforeDeleteTag::class,
+        'CheckBeforeDeletePlaylist' => \App\Http\Middleware\CheckBeforeDeletePlaylist::class,
+
+
     ];
 
     /**

@@ -2,24 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25851794-3449-4d43-815b-a620490a8e24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/CommentTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/laratrust_seeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laratrust_seeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Playlists.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Playlists.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Videos.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Videos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/adminTasks/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/adminTasks/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/adminTasks/roles.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -111,10 +138,14 @@
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/santigarcor/laratrust" />
+      <path value="$PROJECT_DIR$/vendor/kkszymanowski/traitor" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZK35eAdLbzmfbGGalTvrM2YHjJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -124,10 +155,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/back-end/roles" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\roles" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\users" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\adminTasks" />
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\playlists" />
     </key>
   </component>
   <component name="RunManager">
@@ -146,17 +186,77 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584573778828</updated>
-      <workItem from="1584573799346" duration="3757000" />
+      <workItem from="1584573799346" duration="13300000" />
+      <workItem from="1584595418778" duration="1997000" />
+      <workItem from="1584638334315" duration="10527000" />
+      <workItem from="1584807289047" duration="9554000" />
+      <workItem from="1584904377686" duration="15447000" />
+      <workItem from="1584928277209" duration="3940000" />
+      <workItem from="1585076709694" duration="30002000" />
+      <workItem from="1585154283267" duration="17436000" />
+      <workItem from="1585175494197" duration="17271000" />
+      <workItem from="1585229725741" duration="7420000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="171" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585168385178">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="414" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1585168385178" />
+    <state x="402" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584930991621">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="402" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584930991621" />
+    <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585058197028">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585058197028" />
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585190924862">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585190924862" />
+    <state x="308" y="0" width="1043" height="738" key="CommitChangelistDialog2" timestamp="1584597536524">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="308" y="0" width="1043" height="738" key="CommitChangelistDialog2/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584597536524" />
     <state x="517" y="295" key="NewPhpFileDialog" timestamp="1584577320986">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="517" y="295" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1584577320986" />
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584591056722">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584591056722" />
+    <state x="0" y="0" width="1296" height="738" key="find.popup" timestamp="1584634220093">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="0" y="0" width="1296" height="738" key="find.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584634220093" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1585235950399">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585235950399" />
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1585170870760" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1585236477865">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585236477865" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1585172599017" />
   </component>
 </project>

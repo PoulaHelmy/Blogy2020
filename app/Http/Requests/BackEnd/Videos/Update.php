@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\BackEnd\Videos;
+namespace App\Http\Requests\Backend\Videos;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +13,7 @@ class Update extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class Update extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'max:191'],
+            'meta_keywords' => ['max:191'],
+            'meta_des' => ['max:191'],
+            'des' => ['required' , 'min:10'],
+            'youtube' => ['required' , 'min:10' ,'url' ] ,
+            'cat_id' => ['required'  ,'integer' ],
+            'published' => ['required' ]
         ];
     }
 }
