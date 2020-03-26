@@ -76,6 +76,3 @@
     </div>
     @endcomponent
 @endsection
-
-
-

@@ -20,7 +20,7 @@ class CreateProfileTable extends Migration
             $table->string('picture')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
-            
+
             $table->timestamps();
         });
     }

@@ -104,6 +104,3 @@
     </div>
     @endcomponent
 @endsection
-
-
-
