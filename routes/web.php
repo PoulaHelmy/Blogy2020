@@ -67,43 +67,19 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
 
 
     Route::get('/controls', function (){
-        $numAdmins=App\Models\User::whereRoleIs(['admin'])->count();
-        $numUsers=App\Models\User::whereRoleIs(['user'])->count();
-
-        return view('back-end.adminTasks.index',compact('numAdmins','numUsers'));
+        $numAdmins=App\Models\User::all()->count();
+        $numRoles=App\Models\Role::all()->count();
+        return view('back-end.adminTasks.index',compact('numAdmins','numRoles'));
     })->middleware(['role:super_admin'])->name('controls.index');
 
 
 
-
-
-//    Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
-//    Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
-//
-//    Route::resource('pages', 'Pages');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('category/{id}', 'HomeController@category')->name('front.category');
-Route::get('skill/{id}', 'HomeController@skills')->name('front.skill');
-Route::get('tag/{id}', 'HomeController@tags')->name('front.tags');
-Route::get('video/{id}', 'HomeController@video')->name('frontend.video');
-Route::get('contact-us', 'HomeController@messageStore')->name('contact.store');
-Route::get('/', 'HomeController@welcome')->name('frontend.landing');
-Route::get('page/{id}/{slug?}', 'HomeController@page')->name('front.page');
-Route::get('profile/{id}/{slug?}', 'HomeController@profile')->name('front.profile');
+Route::get('/', 'HomeController@index')->name('home');
 
-
-
-Route::get('test', function (){
-
-    $a=App\Models\User::find(2);
-
-    foreach($a->getRoles() as $item) {
-        echo $item."<br><br>";
-    }
-});
 
 

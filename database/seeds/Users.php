@@ -13,7 +13,7 @@ class Users extends Seeder
     {
         $user=\App\Models\User::create([
             'name'=> 'SuperAdmin',
-            'email' => 'superadmin@website.com',
+            'email' => 'superadmin@app.com',
             'password' => bcrypt('123456'),
         ]);
 

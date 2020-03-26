@@ -28,7 +28,9 @@ class Playlists extends Seeder
             $playlist = \App\Models\Playlist::create($array);
             $playlist->skills()->sync(array_rand($ids , 2));
             $playlist->tags()->sync(array_rand($ids , 3));
-            $photo='images/doZoaRNal3Ss6VOBLNSjQhuVNfkd8p1ZXAznrfUQ.jpeg';
+            $playlist->cat()->sync(array_rand($ids , 1));
+
+            $photo='images/I4Srgioo0c5zUU6t5rnjj1ZSxULV4JgQ4nTJU3SG.jpeg';
             Photo::create([
                     'src'=> $photo,
                     'photoable_type'=> 'App\Models\Playlist',

@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
 //            LaratrustSeeder::class,
-////        Users::class,
-            Categories::class,
-            Skills::class,
-            Tags::class,
+//            Users::class,
+//            Categories::class,
+//            Skills::class,
+//            Tags::class,
             Videos::class,
             Posts::class,
             Playlists::class,

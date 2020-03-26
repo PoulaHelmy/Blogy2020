@@ -24,7 +24,9 @@ class Posts extends Seeder
             $post = \App\Models\Post::create($array);
             $post->skills()->sync(array_rand($ids , 2));
             $post->tags()->sync(array_rand($ids , 3));
-            $photo='images/doZoaRNal3Ss6VOBLNSjQhuVNfkd8p1ZXAznrfUQ.jpeg';
+            $post->playlists()->sync(array_rand($ids , 1));
+            $post->cat()->sync(array_rand($ids , 1));
+            $photo='images/I4Srgioo0c5zUU6t5rnjj1ZSxULV4JgQ4nTJU3SG.jpeg';
             \App\Models\Photo::create([
                     'src'=> $photo,
                     'photoable_type'=> 'App\Models\Post',

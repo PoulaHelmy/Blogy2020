@@ -33,33 +33,44 @@
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="javscript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">notifications</i>
-                        <span class="notification">5</span>
+                        <i class="material-icons">person</i>
+
                         <p class="d-lg-none d-md-block">
                             Some Actions
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
-                        <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
-                        <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Another One</a>
+
+
+
+
+                                @if (Route::has('login'))
+                                 <div class="top-right links">
+                                    @auth
+                                        <a class="dropdown-item" href="{{ url('/home') }}">Home</a>
+                                        <form action="{{  route('logout')  }}" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('post') }}
+                                            <button type="submit" class="dropdown-item" >LOG OUT</button>
+
+                                        </form>
+                                        <div class="clearfix"></div>
+                                @else
+                                    <a class="dropdown-item" href="{{ route('login') }}">Login</a>
+
+                                    @if (Route::has('register'))
+                                        <a class="dropdown-item" href="{{ route('register') }}">Resiter</a>
+                                    @endif
+                                @endauth
+                            </div>
+                        @endif
+
+
+
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">
-                        <i class="material-icons">person</i>
-                        <p class="d-lg-none d-md-block">
-                            @if(isset(auth()->user))
-                                {{auth()->user->name}}
-                            @else
-                                Account
-                            @endif
-                        </p>
-                    </a>
                 </li>
             </ul>
 

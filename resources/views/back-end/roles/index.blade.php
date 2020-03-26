@@ -14,14 +14,12 @@
 
     @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes,'total'=>$rows->total()])
         @slot('addButton')
-            @permission('create_videos')
+            @permission('create_tags')
             <div class="col-md-4 text-right">
-
 
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                     Add {{ $sModuleName }}
                 </a>
-
             </div>
             @endpermission
         @endslot
@@ -38,19 +36,6 @@
                     <th>
                         Name
                     </th>
-                    <th>
-                        PlayList
-                    </th>
-                    <th>
-                        Category
-                    </th>
-                    <th>
-                        published
-                    </th>
-
-                    <th>
-                        User
-                    </th>
                     <th class="text-center">
                         control
                     </th>
@@ -58,41 +43,21 @@
                 <tbody>
                 @foreach($rows as $index=>$row)
                     <tr>
-                        <td class="text-light">
+                        <td >
                             {{$index+($rows->currentPage()*10-10) +1}}
                         </td>
-                        <td class="text-center">
+                        <td >
                             {{ $row->id }}
                         </td>
                         <td>
-                            <a class="badge m-1 btn-outline-primary" rel="tooltip" data-original-title="Show {{ $sModuleName }}"style="font-size: 18px;" href="{{route('videos.show',$row)}}">{{ $row->name }}</a>
-                        </td>
-                        <td>
-                            @foreach($row->playlists as $play)
-                                <a class="badge m-1 btn-outline-warning" rel="tooltip" data-original-title="Show Playlist" style="font-size: 18px;" href="{{route('playlists.show',$play)}}">  {{ $play->name }}</a>
-                            @endforeach
-                        </td>
-                        <td>
-                            @foreach($row->cat as $play)
-                            <a class="badge m-1 btn-outline-success" rel="tooltip" data-original-title="Show Category" style="font-size: 18px;" href="{{route('categories.show',$play)}}">  {{ $play->name }}</a>
-                            @endforeach
-                        </td>
-                        <td>
-                            @if($row->published == 1)
-                                published
-                            @else
-                                hidden
-                            @endif
-                        </td>
+                            <a class="badge m-1 btn-outline-primary" style="font-size: 18px;" href="{{route('roles.show',$row)}}">{{ $row->name }}</a>
 
-                        <td>
-                            {{ $row->user->name }}
                         </td>
                         <td class="td-actions text-right">
-                            @permission('update_videos')
+                            @permission('update_tags')
                             @include('back-end.shared.buttons.edit')
                             @endpermission
-                            @permission('delete_videos')
+                            @permission('delete_tags')
                             @include('back-end.shared.buttons.delete')
                             @endpermission
                         </td>

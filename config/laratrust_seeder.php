@@ -14,14 +14,7 @@ return [
             'posts'=>'c,r,u,d',
             'categories'=>'c,r,u,d'
         ],
-        'admin' => [
-            'profile' => 'r,u',
 
-          ],
-        'user' => [
-            'profile' => 'r,u',
-
-        ],
     ],
 
     'permissions_map' => [

@@ -16,8 +16,8 @@
         @slot('addButton')
             <div class="col-md-4 text-right">
                @if(auth()->user()->hasPermission('create_users'))
-                    <a href="{{ route($routeName.'.create',['role'=>$role]) }}" class="btn btn-white btn-round">
-                        Add {{ $role }}
+                    <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
+                        Add {{$sModuleName}}
                     </a>
                @endif
             </div>

@@ -9,19 +9,19 @@
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item {{ is_active('home') }}">
-                <a class="nav-link" href="{{ route('admin.home') }}">
+                <a class="nav-link" href="{{ url('/home') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            @if(auth()->user()->hasRole('super_admin'))
+            @permission('read_users')
                 <li class="nav-item {{ is_active('controls') }}">
                     <a  class="nav-link"  href="{{ route('controls.index') }}">
                         <i class="material-icons">person</i>
                         <p>Users Control's</p>
                     </a>
                 </li>
-            @endif
+            @endpermission
             @permission('read_playlists')
             <li class="nav-item {{ is_active('playlists') }}">
                 <a  class="nav-link"  href="{{ route('playlists.index') }}">

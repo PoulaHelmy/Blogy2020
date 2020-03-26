@@ -3,33 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="25851794-3449-4d43-815b-a620490a8e24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/BackEndController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/BackEndController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Roles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Roles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackEnd/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/laratrust_seeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/laratrust_seeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/categories/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/categories/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Playlists.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Playlists.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Videos.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Videos.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/adminTasks/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/adminTasks/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/adminTasks/roles.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/playlists/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/playlists/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/playlists/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/playlists/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/posts/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/shared/buttons/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/shared/buttons/delete.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/shared/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/shared/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/skills/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/skills/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/skills/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/skills/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/tags/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/tags/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/tags/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/tags/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/trashed/playlistsIndex.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/trashed/playlistsIndex.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/tasks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/tasks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/videos/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/videos/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +155,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/back-end" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/back-end/roles" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -165,9 +163,9 @@
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\app\Models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\roles" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\users" />
-      <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\roles" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\adminTasks" />
       <recent name="C:\xampp\htdocs\Laravel\under development\blogy\resources\views\back-end\playlists" />
     </key>
@@ -196,7 +194,8 @@
       <workItem from="1584928277209" duration="3940000" />
       <workItem from="1585076709694" duration="30002000" />
       <workItem from="1585154283267" duration="17436000" />
-      <workItem from="1585175494197" duration="11716000" />
+      <workItem from="1585175494197" duration="17271000" />
+      <workItem from="1585229725741" duration="7420000" />
     </task>
     <servers />
   </component>
@@ -229,10 +228,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585058197028" />
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585187274890">
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585190924862">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585187274890" />
+    <state x="413" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585190924862" />
     <state x="308" y="0" width="1043" height="738" key="CommitChangelistDialog2" timestamp="1584597536524">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -249,15 +248,15 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="0" y="0" width="1296" height="738" key="find.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1584634220093" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1585170870760">
+    <state x="339" y="165" key="run.anything.popup" timestamp="1585235950399">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585061678142" />
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585235950399" />
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1585170870760" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1585186223225">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1585236477865">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585186223225" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1585236477865" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1585172599017" />
   </component>
 </project>

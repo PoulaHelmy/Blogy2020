@@ -18,10 +18,10 @@ class Videos extends Seeder
 
 
         $youtube = [
-            'https://www.youtube.com/watch?v=Y49Ba16pK20',
-            'https://www.youtube.com/watch?v=HuEmunei6ZY',
-            'https://www.youtube.com/watch?v=iXKp4Pk3ic0',
-            'https://www.youtube.com/watch?v=DQK-jxjEkEY'
+            'https://www.youtube.com/watch?v=ReCMory5weE',
+            'https://www.youtube.com/watch?v=G7Gp9gzIHU8&t=85s',
+            'https://www.youtube.com/watch?v=unY2PbFh5gs',
+            'https://www.youtube.com/watch?v=R0BqKo7vUOg'
         ];
 
         $ids = [1,2,3,4,5,6,7,8,9];
@@ -37,7 +37,7 @@ class Videos extends Seeder
                 'user_id' => 1
             ];
             $video = \App\Models\Video::create($array);
-            $photo='images/doZoaRNal3Ss6VOBLNSjQhuVNfkd8p1ZXAznrfUQ.jpeg';
+            $photo='images/I4Srgioo0c5zUU6t5rnjj1ZSxULV4JgQ4nTJU3SG.jpeg';
             Photo::create([
                     'src'=> $photo,
                     'photoable_type'=> 'App\Models\Video',
@@ -46,6 +46,9 @@ class Videos extends Seeder
             );
             $video->skills()->sync(array_rand($ids , 2));
             $video->tags()->sync(array_rand($ids , 3));
+            $video->playlists()->sync(array_rand($ids , 1));
+            $video->cat()->sync(array_rand($ids , 1));
+
         }
     }
 }
