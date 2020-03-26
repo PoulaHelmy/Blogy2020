@@ -8,7 +8,7 @@
       @include box-shadow($dropdown-shadow);
       visibility: hidden;
       position: absolute;
-      
+
       &[x-placement="top-start"]{
           @include transform-translate-y-dropdown(0px);
 
