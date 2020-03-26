@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-
 use App\Http\Requests\Backend\Videos\Store;
 use App\Http\Requests\Backend\Videos\Update;
 use App\Models\Category;
@@ -14,10 +13,9 @@ use App\Models\Video;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+
 class Videos extends BackEndController
 {
-
-
     public function __construct(Video $model)
     {
         parent::__construct($model);
@@ -40,13 +38,13 @@ class Videos extends BackEndController
             'comments' => [],
 
         ];
-        if(request()->route()->parameter('video')){
+        if (request()->route()->parameter('video')) {
             $array['selectedSkills']  = $this->model->find(request()->route()->parameter('video'))
                 ->skills()->pluck('skills.id')->toArray();
             $array['selectedTags']  = $this->model->find(request()->route()->parameter('video'))
                 ->tags()->pluck('tags.id')->toArray();
             $array['comments']  = $this->model->find(request()->route()->parameter('video'))
-                ->comments()->orderBy('id' , 'desc')->with('user')->get();
+                ->comments()->orderBy('id', 'desc')->with('user')->get();
         }
         return $array;
     }
@@ -55,8 +53,8 @@ class Videos extends BackEndController
     {
         $requestArray =  ['user_id' => auth()->user()->id] + $request->all();
         $row = $this->model->create($requestArray);
-        $fileName = $this->uploadImage($request,$row->id);
-        $this->syncTagsSkills($row , $requestArray);
+        $fileName = $this->uploadImage($request, $row->id);
+        $this->syncTagsSkills($row, $requestArray);
         return redirect()->route('videos.index');
     }
 
@@ -66,18 +64,18 @@ class Videos extends BackEndController
 
         $row = $this->model->FindOrFail($id);
         $row->update($requestArray);
-        $this->syncTagsSkills($row , $requestArray);
-        if($request->hasFile('image'))
-        {
+        $this->syncTagsSkills($row, $requestArray);
+        if ($request->hasFile('image')) {
             Storage::disk('public')->delete($row->photos->src);
             $photo=\App\Models\Photo::findOrFail($row->photos->id);
             $photo->delete();
-            $fileName = $this->uploadImage($request,$row->id);
+            $fileName = $this->uploadImage($request, $row->id);
         }
         return redirect()->route('videos.edit', [ $row->id]);
     }
 
-    protected function syncTagsSkills($row , $requestArray){
+    protected function syncTagsSkills($row, $requestArray)
+    {
         if (isset($requestArray['skills']) && !empty($requestArray['skills'])) {
             $row->skills()->sync($requestArray['skills']);
         }
@@ -85,22 +83,23 @@ class Videos extends BackEndController
             $row->tags()->sync($requestArray['tags']);
         }
         if (isset($requestArray['playlist']) && !empty($requestArray['playlist'])) {
-          $row->playlists()->sync($requestArray['playlist']);
+            $row->playlists()->sync($requestArray['playlist']);
         }
-
     }
 
-    protected function uploadImage($request,$id)
+    protected function uploadImage($request, $id)
     {
-        $photo=Photo::create([
-                'src'=> $request->image->store('images','public'),
+        $photo=Photo::create(
+            [
+                'src'=> $request->image->store('images', 'public'),
                 'photoable_type'=> $request->get('photoable_type'),
                 'photoable_id'=> $id
             ]
         );
         return $photo;
     }
-    public function trashed(){
+    public function trashed()
+    {
         $rows=Video::onlyTrashed()->paginate(10);
         $moduleName = $this->pluralModelName();
         $sModuleName = $this->getModelName();
@@ -113,15 +112,15 @@ class Videos extends BackEndController
         ));
     }
 
-    public function destroyvideo($id){
-        $video=Video::withTrashed()->firstWhere('id','=',$id);
-        if($video->trashed())
-        {
+    public function destroyvideo($id)
+    {
+        $video=Video::withTrashed()->firstWhere('id', '=', $id);
+        if ($video->trashed()) {
             foreach ($video->tags as $tag) {
-                 $tag->pivot->delete();
+                $tag->pivot->delete();
             }
             foreach ($video->skills as $skill) {
-                 $skill->pivot->delete();
+                $skill->pivot->delete();
             }
             foreach ($video->playlists as $playlist) {
                 $playlist->pivot->delete();
@@ -129,15 +128,15 @@ class Videos extends BackEndController
             Storage::disk('public')->delete($video->photos->src);
             $video->photos->delete();
             $video->forceDelete();
-
-        }
-        else
+        } else {
             $video->delete();
+        }
         return $this->trashed();
     }
 
-    public function restorevideo($id){
-        $video=Video::withTrashed()->firstWhere('id','=',$id)->restore();
+    public function restorevideo($id)
+    {
+        $video=Video::withTrashed()->firstWhere('id', '=', $id)->restore();
         return $this->trashed();
     }
 }

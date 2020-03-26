@@ -52,7 +52,6 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     //Route::resource('pages', 'Pages');
     //Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
     //Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
-
 });
 
 Auth::routes();
@@ -66,9 +65,3 @@ Route::get('contact-us', 'HomeController@messageStore')->name('contact.store');
 Route::get('/', 'HomeController@welcome')->name('frontend.landing');
 Route::get('page/{id}/{slug?}', 'HomeController@page')->name('front.page');
 Route::get('profile/{id}/{slug?}', 'HomeController@profile')->name('front.profile');
-
-
-
-
-
-
