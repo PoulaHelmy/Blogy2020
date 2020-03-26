@@ -8,8 +8,8 @@
                    <div class="row">
                     <ul class="nav nav-tabs" data-tabs="tabs">
                       @php
-                          $models=['users','categories','tags','skills','posts','videos','playlists'];
-                            $maps=['create','read','update','delete'];
+                          $models=['categories','tags','skills','posts','videos','playlists'];
+                            $maps=['create','read','update'];
                           @endphp
                         @foreach($models as $index=> $model)
 
@@ -32,7 +32,7 @@
             <div class="tab-content" style="font-size: 18px">
                 @foreach($models as $index=> $model)
 
-                    <div class="tab-pane {{$index==0?'active':''}}" id="{{$model}}">
+                    <div class="tab-pane {{$index== 0 ? 'active':'' }}" id="{{$model}}">
                         <table class="table table-hover">
                             <tbody>
                             @foreach($maps as $index=> $map)
@@ -44,7 +44,9 @@
                                                        name="permissions[]"
                                                        type="checkbox"
                                                        value="{{$map .'_' .$model}}"
-                                                       {{isset($row)?$row->hasPermission($map.'_'.$model)?'checked':'':''}}>
+                                                       @isset($row)
+                                                           {{$row->hasPermission($map.'_'.$model) ? 'checked':''}}
+                                                       @endisset>
                                                 <span class="form-check-sign"><span class="check"></span></span>
                                             </label>
                                         </div>

@@ -4,6 +4,7 @@
     {{ $pageTitle }}
 @endsection
 
+
 @section('content')
     @component('back-end.layout.header',['folderName'=>$folderName,'trashed'=>''])
         @slot('nav_title')
@@ -20,15 +21,21 @@
                             <p class="card-category">{{ $pageDes }}</p>
                         </div>
                         <div class="col-md-2">
+                            @permission('update_playlists')
                             @include('back-end.shared.buttons.edit')
+                            @endpermission
                         </div>
                         <div class="col-md-2">
+                            @permission('delete_playlists')
                             @include('back-end.shared.buttons.delete')
+                            @endpermission
                         </div>
                         <div class="col-md-4 text-right">
+                            @permission('create_playlists')
                             <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                                 Add {{ $sModuleName }}
                             </a>
+                            @endpermission
                         </div>
                     </div>
                 </div>

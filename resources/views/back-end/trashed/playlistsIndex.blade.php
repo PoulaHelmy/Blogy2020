@@ -1,13 +1,13 @@
 @extends('back-end.layout.app')
 
 @section('title')
-    {{ $pageTitle ?? 'Trashed Videos' }}
+    {{ $pageTitle ?? 'Trashed PlayLists' }}
 @endsection
 
 @section('content')
     @component('back-end.layout.header',['folderName'=>$folderName,'trashed'=>'trashed'])
         @slot('nav_title')
-            Trashed Videos
+            Trashed Playlists
         @endslot
     @endcomponent
     <div class="row">

@@ -38,6 +38,9 @@
             @enderror
         </div>
     </div>
+    <input type="hidden" name="role" class="form-control " value="{{$role}}">
+
+
 
 
 </div>

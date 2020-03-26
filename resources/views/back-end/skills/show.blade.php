@@ -13,9 +13,11 @@
     @component('back-end.shared.table' , ['pageTitle' => $pageTitle ?? '' , 'pageDes' => $pageDes])
         @slot('addButton')
             <div class="col-md-4 text-right">
+                @permission('create_skills')
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                     Add {{ $sModuleName }}
                 </a>
+                @endpermission
             </div>
         @endslot
     <div class="table-responsive">
@@ -58,8 +60,14 @@
                         Actions
                     </td>
                     <td>
+                        @permission('update_skills')
                         @include('back-end.shared.buttons.edit')
+
+                        @endpermission
+                        @permission('delete_skills')
                         @include('back-end.shared.buttons.delete')
+
+                        @endpermission
                     </td>
                 </tr>
 

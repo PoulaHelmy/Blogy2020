@@ -5,3 +5,4 @@
         <i class="material-icons">close</i>
     </button>
 </form>
+<div class="clearfix"></div>

@@ -16,8 +16,8 @@
         @slot('addButton')
             <div class="col-md-4 text-right">
                @if(auth()->user()->hasPermission('create_users'))
-                    <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
-                        Add {{ $sModuleName }}
+                    <a href="{{ route($routeName.'.create',['role'=>$role]) }}" class="btn btn-white btn-round">
+                        Add {{ $role }}
                     </a>
                @endif
             </div>
@@ -36,10 +36,13 @@
                         Name
                     </th>
                     <th>
-                        email
+                        Role
+                    </th>
+                    <th>
+                        Email
                     </th>
                     <th class="text-right">
-                        control
+                        Controls
                     </th>
                 </tr></thead>
                 <tbody>
@@ -52,7 +55,14 @@
                             {{ $row->id }}
                         </td>
                         <td>
-                            {{ $row->name }}
+                            <a class="badge m-1 btn-outline-primary" style="font-size: 18px;" href="{{route('users.show',$row)}}">{{ $row->name }}</a>
+                        </td>
+                        <td>
+                        <span class="badge-danger badge" style="font-size: 20px">
+                            @foreach($row->getRoles() as $item)
+                                {{$item}}
+                            @endforeach
+                        </span>
                         </td>
                         <td>
                             {{ $row->email }}

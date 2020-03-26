@@ -7,7 +7,7 @@
                         <h4 class="card-title ">{{ $pageTitle }} </h4>
                         <p class="card-category">{{ $pageDes }}<span class="badge badge-warning mx-2">{{$total??''}}</span></p>
                     </div>
-                    {{ $addButton }}
+                    {{ $addButton ?? '' }}
                 </div>
             </div>
             <div class="card-body table-hover">

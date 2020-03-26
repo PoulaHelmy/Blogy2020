@@ -14,11 +14,16 @@
 
     @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes,'total'=>$rows->total()])
         @slot('addButton')
+            @permission('create_videos')
             <div class="col-md-4 text-right">
+
+
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                     Add {{ $sModuleName }}
                 </a>
+
             </div>
+            @endpermission
         @endslot
         <div class="table-responsive">
             <table class="table">
@@ -84,9 +89,12 @@
                             {{ $row->user->name }}
                         </td>
                         <td class="td-actions text-right">
+                            @permission('update_videos')
                             @include('back-end.shared.buttons.edit')
-                            @include('back-end.shared.buttons.softDelete')
-
+                            @endpermission
+                            @permission('delete_videos')
+                            @include('back-end.shared.buttons.softDeletedelete')
+                            @endpermission
                         </td>
                     </tr>
                 @endforeach

@@ -16,21 +16,11 @@ return [
         ],
         'admin' => [
             'profile' => 'r,u',
-            'tags'=>'c,r,u',
-            'skills'=>'c,r,u',
-            'playlists'=>'c,r,u',
-            'videos'=>'c,r,u',
-            'posts'=>'c,r,u',
-            'categories'=>'c,r,u'
+
           ],
         'user' => [
             'profile' => 'r,u',
-            'tags'=>'r',
-            'skills'=>'r',
-            'playlists'=>'r',
-            'videos'=>'r',
-            'posts'=>'r',
-            'categories'=>'r'
+
         ],
     ],
 

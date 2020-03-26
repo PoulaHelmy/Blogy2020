@@ -20,15 +20,21 @@
                             <p class="card-category">{{ $pageDes }}</p>
                         </div>
                         <div class="col-md-2">
+                            @permission('update_posts')
                             @include('back-end.shared.buttons.edit')
+                            @endpermission
                         </div>
                         <div class="col-md-2">
-                            @include('back-end.shared.buttons.delete')
+                            @permission('delete_posts')
+                            @include('back-end.shared.buttons.softDelete')
+                            @endpermission
                         </div>
                         <div class="col-md-4 text-right">
+                            @permission('create_posts')
                             <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                                 Add {{ $sModuleName }}
                             </a>
+                            @endpermission
                         </div>
                     </div>
                 </div>

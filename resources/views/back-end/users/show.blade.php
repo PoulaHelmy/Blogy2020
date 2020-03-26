@@ -12,13 +12,13 @@
     @endcomponent
     @component('back-end.shared.table' , ['pageTitle' => $pageTitle ?? '' , 'pageDes' => $pageDes])
         @slot('addButton')
+            @permission('create_users')
             <div class="col-md-4 text-right">
-                @permission('create_tags')
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                     Add {{ $sModuleName }}
                 </a>
-                @endpermission
             </div>
+            @endpermission
         @endslot
     <div class="table-responsive">
         <table class="table">
@@ -43,10 +43,37 @@
                         Name
                     </td>
                     <td>
-                        {{ $row->name }}
+                        <span class="badge-primary badge" style="font-size: 20px">{{ $row->name }}</span>
+
                     </td>
                 </tr>
-
+                <tr>
+                    <td>
+                        Role
+                    </td>
+                    <td>
+                        <span class="badge-danger badge" style="font-size: 20px">
+                            @foreach($row->getRoles() as $item)
+                                {{$item}}
+                            @endforeach
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Permissions
+                    </td>
+                    <td>
+                        @foreach($row->allPermissions() as $item)
+                            <a class="badge m-1 btn-outline-success"
+                               rel="tooltip"
+                               data-original-title="Role"
+                               style="font-size: 18px;"
+                               href="#">
+                                {{$item->display_name}}</a>
+                        @endforeach
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         Date
@@ -55,18 +82,19 @@
                         {{ $row->created_at }}
                     </td>
                 </tr>
+
                 <tr>
                     <td>
                         Actions
                     </td>
                     <td>
-                        @permission('update_tags')
+                        @permission('update_users')
                         @include('back-end.shared.buttons.edit')
-
                         @endpermission
-                        @permission('delete_tags')
-                        @include('back-end.shared.buttons.delete')
+                        @permission('create_users')
 
+
+                        @include('back-end.shared.buttons.delete')
                         @endpermission
                     </td>
                 </tr>

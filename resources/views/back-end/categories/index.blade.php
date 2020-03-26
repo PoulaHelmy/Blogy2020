@@ -14,11 +14,13 @@
 
     @component('back-end.shared.table' , ['pageTitle' => $pageTitle ?? '' , 'pageDes' => $pageDes,'total'=>$rows->total()])
         @slot('addButton')
+            @permission('create_categories')
             <div class="col-md-4 text-right">
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                     Add {{ $sModuleName }}
                 </a>
             </div>
+            @endpermission
         @endslot
 
         <div class="table-responsive">
@@ -48,12 +50,18 @@
                             {{ $row->id }}
                         </td>
                         <td>
-
+                            @permission('read_categories')
                             <a class="badge m-1 btn-outline-primary" style="font-size: 18px;" href="{{route('categories.show',$row)}}">{{ $row->name }}</a>
+                            @endpermission
                         </td>
                         <td class="td-actions text-right">
+                            @permission('update_categories')
                             @include('back-end.shared.buttons.edit')
+                            @endpermission
+
+                            @permission('delete_categories')
                             @include('back-end.shared.buttons.delete')
+                            @endpermission
                         </td>
                     </tr>
                 @endforeach

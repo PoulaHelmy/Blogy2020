@@ -20,7 +20,7 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::resource('videos', 'Videos');
     Route::resource('posts', 'Posts');
     Route::resource('playlists', 'Playlists');
-
+    Route::resource('roles', 'Roles');
     Route::post('videocomments', 'Comments@store')->name('videoscomment.store');
     Route::get('videocomments/{id}', 'Comments@delete')->name('videoscomment.delete');
     Route::post('videocomments/{id}', 'Comments@update')->name('videoscomment.update');
@@ -47,6 +47,35 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::get('/trashedplaylists', 'Playlists@trashedItem')->name('trashedplaylists.index');
     Route::get('/trashedplaylists/{id}', 'Playlists@destroyTrash')->name('trashedplaylists.destroy');
     Route::get('/restoredplaylists/{id}', 'Playlists@restore')->name('trashedplaylists.restore');
+    Route::get('/trashedItems', function (){
+        $plays=App\Models\Playlist::withTrashed()->count();
+        $trashpalys=App\Models\Playlist::onlyTrashed()->count();
+        $vids=App\Models\Video::withTrashed()->count();
+        $trashvids=App\Models\Video::onlyTrashed()->count();
+        $posts=App\Models\Post::withTrashed()->count();
+        $trashposts=App\Models\Post::onlyTrashed()->count();
+        return view('back-end.trashed.index',compact('plays',
+            'trashpalys','vids','trashvids','posts','trashposts'));
+    })->name('trashedItems.index');
+
+    Route::get('/secitems', function (){
+        $tags=App\Models\Tag::all()->count();
+        $skills=App\Models\Skill::all()->count();
+        $cat=App\Models\Category::all()->count();
+        return view('back-end.adminTasks.addOperations',compact('cat','tags','skills'));
+    })->name('secitems.index');
+
+
+    Route::get('/controls', function (){
+        $numAdmins=App\Models\User::whereRoleIs(['admin'])->count();
+        $numUsers=App\Models\User::whereRoleIs(['user'])->count();
+
+        return view('back-end.adminTasks.index',compact('numAdmins','numUsers'));
+    })->middleware(['role:super_admin'])->name('controls.index');
+
+
+
+
 
 //    Route::post('messages/replay/{id}', 'Messages@replay')->name('message.replay');
 //    Route::resource('messages', 'Messages')->only(['index' , 'destroy' , 'edit']);
@@ -66,31 +95,15 @@ Route::get('/', 'HomeController@welcome')->name('frontend.landing');
 Route::get('page/{id}/{slug?}', 'HomeController@page')->name('front.page');
 Route::get('profile/{id}/{slug?}', 'HomeController@profile')->name('front.profile');
 
+
+
 Route::get('test', function (){
 
-    $a=App\Models\Post::find(2);
-    $b=App\Models\Video::find(2);
-    $c=App\Models\Playlist::find(2);
+    $a=App\Models\User::find(2);
 
-    $z=App\Models\Category::find(2);
-//    echo $a."<br><br><br><br>";
-   echo $b."<br><br><br><br>";
-//    echo $c."<br><br><br><br>";
-//    echo $z."<br><br><br><br>";
-    foreach ($z->posts as $cc)
-    {
-        echo $cc->name."<br><br><br><br>";
+    foreach($a->getRoles() as $item) {
+        echo $item."<br><br>";
     }
-    foreach ($z->videos as $cc)
-    {
-        echo $cc->name."<br><br><br><br>";
-    }
-    foreach ($z->playlists as $cc)
-    {
-        echo $cc->name."<br><br><br><br>";
-    }
-    echo $z->playlists->count()."<br><br><br><br>";
-
 });
 
 

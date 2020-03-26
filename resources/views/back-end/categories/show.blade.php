@@ -12,11 +12,13 @@
     @endcomponent
     @component('back-end.shared.table' , ['pageTitle' => $pageTitle ?? '' , 'pageDes' => $pageDes])
         @slot('addButton')
+            @permission('create_categories')
             <div class="col-md-4 text-right">
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                     Add {{ $sModuleName }}
                 </a>
             </div>
+            @endpermission
         @endslot
     <div class="table-responsive">
         <table class="table">
@@ -73,8 +75,13 @@
                         Actions
                     </td>
                     <td>
+                        @permission('update_categories')
                         @include('back-end.shared.buttons.edit')
+                        @endpermission
+
+                        @permission('delete_categories')
                         @include('back-end.shared.buttons.delete')
+                        @endpermission
                     </td>
                 </tr>
 

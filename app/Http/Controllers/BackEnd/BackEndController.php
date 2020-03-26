@@ -98,7 +98,6 @@ class BackEndController extends Controller
         $folderName = $this->getClassNameFromModel();
         $routeName = $folderName;
         $append = $this->append();
-
         return view('back-end.' . $folderName . '.edit', compact(
             'row',
             'pageTitle',

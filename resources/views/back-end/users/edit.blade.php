@@ -3,7 +3,7 @@
 @section('title')
     {{ $pageTitle }}
 @endsection
-
+@php $role=session()->get('role');@endphp
 @section('content')
 
     @component('back-end.layout.header',['folderName'=>$folderName,'trashed'=>''])
@@ -19,10 +19,12 @@
                     <p class="card-category">{{ $pageDes }}</p>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route($routeName.'.update' , [ $row]) }}" method="POST">
+                    <form action="{{ route($routeName.'.update' ,$row) }}" method="POST">
                         {{ method_field('put') }}
-                        @include('back-end.'.$folderName.'.form')
-                        @include('back-end.'.$folderName.'.tasks')
+                        @include('back-end.'.$folderName.'.form',['role'=>$role])
+                        @if($role=='Admin')
+                            @include('back-end.users.tasks')
+                        @endif
                         <button type="submit" class="btn btn-primary pull-right">Update {{ $moduleName }}</button>
                         <div class="clearfix"></div>
                     </form>

@@ -14,11 +14,14 @@
 
     @component('back-end.shared.table' , ['pageTitle' => $pageTitle , 'pageDes' => $pageDes,'total'=>$rows->total()])
         @slot('addButton')
+            @permission('create_tags')
             <div class="col-md-4 text-right">
+
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                     Add {{ $sModuleName }}
                 </a>
             </div>
+            @endpermission
         @endslot
         <div class="table-responsive">
             <table class="table">
@@ -51,8 +54,14 @@
 
                         </td>
                         <td class="td-actions text-right">
+                            @permission('update_tags')
                             @include('back-end.shared.buttons.edit')
+
+                            @endpermission
+                            @permission('delete_tags')
                             @include('back-end.shared.buttons.delete')
+
+                            @endpermission
                         </td>
                     </tr>
                 @endforeach

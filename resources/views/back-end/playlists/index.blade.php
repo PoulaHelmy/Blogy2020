@@ -15,9 +15,11 @@
     @component('back-end.shared.table' , ['pageTitle' => $pageTitle ?? '' , 'pageDes' => $pageDes ?? '','total'=>$rows->total()])
         @slot('addButton')
             <div class="col-md-4 text-right">
+                @permission('create_playlists')
                 <a href="{{ route($routeName.'.create') }}" class="btn btn-white btn-round">
                     Add {{ $sModuleName }}
                 </a>
+                @endpermission
             </div>
         @endslot
         <div class="table-responsive">
@@ -76,8 +78,12 @@
                             {{ $row->user->name }}
                         </td>
                         <td class="td-actions text-right">
+                            @permission('update_playlists')
                             @include('back-end.shared.buttons.edit')
-                            @include('back-end.shared.buttons.softDelete')
+                            @endpermission
+                            @permission('delete_playlists')
+                            @include('back-end.shared.buttons.delete')
+                            @endpermission
                         </td>
                     </tr>
                 @endforeach
