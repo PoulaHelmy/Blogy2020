@@ -26,29 +26,29 @@ class Videos extends Seeder
 
         $ids = [1,2,3,4,5,6,7,8,9];
 
-        for($i = 0 ;$i< 10 ;$i++){
+        for ($i = 0 ;$i< 10 ;$i++) {
             $array = [
                 'name' => $faker->word,
                 'meta_keywords' => $faker->name,
                 'meta_des' => $faker->name,
-                'youtube' => $youtube[rand(0,3)],
-                'published' => rand(0,1),
+                'youtube' => $youtube[rand(0, 3)],
+                'published' => rand(0, 1),
                 'des' => $faker->paragraph,
                 'user_id' => 1
             ];
             $video = \App\Models\Video::create($array);
             $photo='images/I4Srgioo0c5zUU6t5rnjj1ZSxULV4JgQ4nTJU3SG.jpeg';
-            Photo::create([
+            Photo::create(
+                [
                     'src'=> $photo,
                     'photoable_type'=> 'App\Models\Video',
                     'photoable_id'=> $video->id
                 ]
             );
-            $video->skills()->sync(array_rand($ids , 2));
-            $video->tags()->sync(array_rand($ids , 3));
-            $video->playlists()->sync(array_rand($ids , 1));
-            $video->cat()->sync(array_rand($ids , 1));
-
+            $video->skills()->sync(array_rand($ids, 2));
+            $video->tags()->sync(array_rand($ids, 3));
+            $video->playlists()->sync(array_rand($ids, 1));
+            $video->cat()->sync(array_rand($ids, 1));
         }
     }
 }

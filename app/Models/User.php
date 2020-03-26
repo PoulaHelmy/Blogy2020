@@ -23,18 +23,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function getNameAttribute($value){
+    public function getNameAttribute($value)
+    {
         return ucfirst($value);
     }
 
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function profile(){
+    public function profile()
+    {
         return $this->hasOne(Profile::class);
     }
 
-    public function getGravatar(){
+    public function getGravatar()
+    {
         $hash=md5(strtolower(trim($this->attributes['email'])));
         return "https://gravatar.com/avatar/$hash";
     }
@@ -44,27 +47,10 @@ class User extends Authenticatable
     }
     public function hasPicture()
     {
-        if(preg_match('/profilesPicture/',$this->profile->picture,$match))
-        {
+        if (preg_match('/profilesPicture/', $this->profile->picture, $match)) {
             return true;
-        }
-        else
+        } else {
             return false;
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

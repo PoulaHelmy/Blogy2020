@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -12,17 +11,17 @@ class Categories extends BackEndController
     {
         parent::__construct($model);
         $this->middleware(['CheckBeforeDeleteCategory'])->only('destroy');
-
-
     }
 
-    public function store(\App\Http\Requests\BackEnd\Categoires\Store $request){
+    public function store(\App\Http\Requests\BackEnd\Categoires\Store $request)
+    {
         $this->model->create($request->all());
 
         return redirect()->route('categories.index');
     }
 
-    public function update($id , \App\Http\Requests\BackEnd\Categoires\Store $request){
+    public function update($id, \App\Http\Requests\BackEnd\Categoires\Store $request)
+    {
         $row = $this->model->FindOrFail($id);
         $row->update($request->all());
 

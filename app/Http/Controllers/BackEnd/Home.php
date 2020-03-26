@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-
 use App\Models\User;
 use Illuminate\Http\Request;
-
 
 class Home extends BackEndController
 {
@@ -14,7 +12,8 @@ class Home extends BackEndController
         parent::__construct($model);
     }
 
-    public function index(Request $request){
-        return view('back-end.home' );
+    public function index(Request $request)
+    {
+        return view('back-end.home');
     }
 }

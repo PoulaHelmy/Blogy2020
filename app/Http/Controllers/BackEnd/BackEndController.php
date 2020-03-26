@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+
 class BackEndController extends Controller
 {
     protected $model;
@@ -31,8 +32,8 @@ class BackEndController extends Controller
 //        if(!empty($with)){
 //            $rows = $rows->with($with);
 //        }
-        $rows = $this->model::when($request->search,function ($query)use($request){
-            return $query->where('name','like','%'.$request->search.'%');
+        $rows = $this->model::when($request->search, function ($query) use ($request) {
+            return $query->where('name', 'like', '%'.$request->search.'%');
         })->latest()->paginate(10);
 
         $moduleName = $this->pluralModelName();
@@ -52,7 +53,8 @@ class BackEndController extends Controller
             'folderName'
         ));
     }
-    public function show($row){
+    public function show($row)
+    {
         $moduleName = $this->getModelName();
         $pageTitle = "Show ". $moduleName;
         $pageDes = "Here you can Show " .$moduleName;
@@ -60,7 +62,7 @@ class BackEndController extends Controller
         $folderName = $this->getClassNameFromModel();
         $routeName = $folderName;
         $row=$this->model->findOrFail($row);
-        return view('back-end.' . $folderName . '.show' , compact(
+        return view('back-end.' . $folderName . '.show', compact(
             'row',
             'pageTitle',
             'moduleName',
@@ -79,7 +81,7 @@ class BackEndController extends Controller
         $routeName = $folderName;
         $append = $this->append();
 
-        return view('back-end.' . $folderName . '.create' , compact(
+        return view('back-end.' . $folderName . '.create', compact(
             'pageTitle',
             'moduleName',
             'pageDes',
@@ -113,7 +115,8 @@ class BackEndController extends Controller
         return $rows;
     }
 
-    protected function with(){
+    protected function with()
+    {
         return [];
     }
 
@@ -122,15 +125,18 @@ class BackEndController extends Controller
         return strtolower($this->pluralModelName());
     }
 
-    protected function pluralModelName(){
+    protected function pluralModelName()
+    {
         return Str::plural($this->getModelName());
     }
 
-    protected function getModelName(){
+    protected function getModelName()
+    {
         return class_basename($this->model);
     }
 
-    protected function append(){
+    protected function append()
+    {
         return [];
     }
 
@@ -173,31 +179,27 @@ class BackEndController extends Controller
             'routeName',
             'folderName'
         ));
-
     }
     public function destroyTrash($id)
     {
-
-        $row=$this->model::withTrashed()->firstWhere('id','=',$id);
-            foreach ($row->tags as $tag) {
-                $tag->pivot->delete();
-            }
-            foreach ($row->skills as $skill) {
-                $skill->pivot->delete();
-            }
+        $row=$this->model::withTrashed()->firstWhere('id', '=', $id);
+        foreach ($row->tags as $tag) {
+            $tag->pivot->delete();
+        }
+        foreach ($row->skills as $skill) {
+            $skill->pivot->delete();
+        }
         foreach ($row->cat as $cc) {
             $cc->pivot->delete();
         }
-            if($this->getModelName()=="Video"||$this->getModelName()=="Post")
-            {
-
-                foreach ($row->playlists as $play) {
-                    $play->pivot->delete();
-                }
+        if ($this->getModelName()=="Video"||$this->getModelName()=="Post") {
+            foreach ($row->playlists as $play) {
+                $play->pivot->delete();
             }
-            Storage::disk('public')->delete($row->photos->src);
-            $row->photos->delete();
-            $row->forceDelete();
+        }
+        Storage::disk('public')->delete($row->photos->src);
+        $row->photos->delete();
+        $row->forceDelete();
 
         $rows = $this->model::onlyTrashed()->paginate(10);
         $moduleName = $this->pluralModelName();
@@ -211,11 +213,11 @@ class BackEndController extends Controller
             'routeName',
             'folderName'
         ));
-
     }
 
-    public function restore($id){
-        $row=$this->model::withTrashed()->firstWhere('id','=',$id)->restore();
+    public function restore($id)
+    {
+        $row=$this->model::withTrashed()->firstWhere('id', '=', $id)->restore();
         $moduleName = $this->pluralModelName();
         $sModuleName = $this->getModelName();
         $routeName = $this->getClassNameFromModel();

@@ -39,7 +39,9 @@ class HomeController extends Controller
         $vids=Video::withTrashed()->count();
         $posts=Playlist::withTrashed()->count();
 
-        return view('home',
-            compact('tags', 'skills', 'cat','numUsers','numAdmins','vids','posts','plays'));
+        return view(
+            'home',
+            compact('tags', 'skills', 'cat', 'numUsers', 'numAdmins', 'vids', 'posts', 'plays')
+        );
     }
 }

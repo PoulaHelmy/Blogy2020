@@ -13,7 +13,7 @@ class Comments extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for($i = 0 ;$i< 10 ;$i++){
+        for ($i = 0 ;$i< 10 ;$i++) {
             $array = [
                 'comment' => $faker->paragraph,
                 'user_id' => 1,

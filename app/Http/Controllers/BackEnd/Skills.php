@@ -13,19 +13,20 @@ class Skills extends BackEndController
     {
         parent::__construct($model);
         $this->middleware(['CheckBeforeDeleteSkill'])->only('destroy');
-
     }
 
-    public function store(Store $request){
+    public function store(Store $request)
+    {
         $this->model->create($request->all());
 
         return redirect()->route('skills.index');
     }
 
-    public function update($id , Store $request){
+    public function update($id, Store $request)
+    {
         $row = $this->model->FindOrFail($id);
         $row->update($request->all());
 
-        return redirect()->route('skills.edit' , [ $row->id]);
+        return redirect()->route('skills.edit', [ $row->id]);
     }
 }

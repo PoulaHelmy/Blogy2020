@@ -47,39 +47,39 @@ Route::namespace('BackEnd')->prefix('admin')->group(function () {
     Route::get('/trashedplaylists', 'Playlists@trashedItem')->name('trashedplaylists.index');
     Route::get('/trashedplaylists/{id}', 'Playlists@destroyTrash')->name('trashedplaylists.destroy');
     Route::get('/restoredplaylists/{id}', 'Playlists@restore')->name('trashedplaylists.restore');
-    Route::get('/trashedItems', function (){
+    Route::get('/trashedItems', function () {
         $plays=App\Models\Playlist::withTrashed()->count();
         $trashpalys=App\Models\Playlist::onlyTrashed()->count();
         $vids=App\Models\Video::withTrashed()->count();
         $trashvids=App\Models\Video::onlyTrashed()->count();
         $posts=App\Models\Post::withTrashed()->count();
         $trashposts=App\Models\Post::onlyTrashed()->count();
-        return view('back-end.trashed.index',compact('plays',
-            'trashpalys','vids','trashvids','posts','trashposts'));
+        return view('back-end.trashed.index', compact(
+            'plays',
+            'trashpalys',
+            'vids',
+            'trashvids',
+            'posts',
+            'trashposts'
+        ));
     })->name('trashedItems.index');
 
-    Route::get('/secitems', function (){
+    Route::get('/secitems', function () {
         $tags=App\Models\Tag::all()->count();
         $skills=App\Models\Skill::all()->count();
         $cat=App\Models\Category::all()->count();
-        return view('back-end.adminTasks.addOperations',compact('cat','tags','skills'));
+        return view('back-end.adminTasks.addOperations', compact('cat', 'tags', 'skills'));
     })->name('secitems.index');
 
 
-    Route::get('/controls', function (){
+    Route::get('/controls', function () {
         $numAdmins=App\Models\User::all()->count();
         $numRoles=App\Models\Role::all()->count();
-        return view('back-end.adminTasks.index',compact('numAdmins','numRoles'));
+        return view('back-end.adminTasks.index', compact('numAdmins', 'numRoles'));
     })->middleware(['role:super_admin'])->name('controls.index');
-
-
-
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
-
-
-

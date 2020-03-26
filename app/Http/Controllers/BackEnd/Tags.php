@@ -11,19 +11,19 @@ class Tags extends BackEndController
     {
         parent::__construct($model);
         $this->middleware(['CheckBeforeDeleteTag'])->only('destroy');
-
     }
 
-    public function store(Store $request){
-
+    public function store(Store $request)
+    {
         $this->model->create($request->all());
 
         return redirect()->route('tags.index');
     }
 
-    public function update($id , Store $request){
+    public function update($id, Store $request)
+    {
         $row = $this->model->FindOrFail($id);
         $row->update($request->all());
-        return redirect()->route('tags.edit' , [ $row->id]);
+        return redirect()->route('tags.edit', [ $row->id]);
     }
 }

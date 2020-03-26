@@ -8,6 +8,7 @@ use App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Post extends Model
 {
     use SoftDeletes;
@@ -17,8 +18,9 @@ class Post extends Model
         'content',
         'user_id'];
 
-    public function photos(){
-        return $this->morphOne(\App\Models\Photo::class,'photoable');
+    public function photos()
+    {
+        return $this->morphOne(\App\Models\Photo::class, 'photoable');
     }
 
     public function comments()
@@ -39,12 +41,12 @@ class Post extends Model
         return $this->morphToMany(\App\Models\Category::class, 'categorable');
     }
 
-    public function user() {
-        return $this->belongsTo(User::class,'user_id');
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
     public function playlists()
     {
         return $this->morphToMany(\App\Models\Playlist::class, 'playlistable');
     }
-
 }

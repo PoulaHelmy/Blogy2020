@@ -18,6 +18,5 @@ class Users extends Seeder
         ]);
 
         $user->attachRole('super_admin');
-
     }
 }

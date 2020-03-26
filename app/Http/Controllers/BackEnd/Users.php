@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\BackEnd;
 
-
 use App\Http\Requests\BackEnd\Users\Store;
 use App\Http\Requests\BackEnd\Users\Update;
 use App\Models\Role;
@@ -24,9 +23,8 @@ class Users extends BackEndController
 
     public function index(Request $request)
     {
-
-        $rows = $this->model::when($request->search,function ($query)use($request){
-                return $query->where('name','like','%'.$request->search.'%');
+        $rows = $this->model::when($request->search, function ($query) use ($request) {
+            return $query->where('name', 'like', '%'.$request->search.'%');
         })->paginate(10);
 
         $moduleName = $this->pluralModelName();
@@ -52,7 +50,8 @@ class Users extends BackEndController
         ];
         return $array;
     }
-    public function store(Store $request){
+    public function store(Store $request)
+    {
         $requestArray = $request->all();
         $requestArray['password'] =  Hash::make($requestArray['password']);
         $row=$this->model->create($requestArray);
@@ -60,13 +59,13 @@ class Users extends BackEndController
         return redirect()->route('users.index');
     }
 
-    public function update($id , Update $request){
-
+    public function update($id, Update $request)
+    {
         $row = $this->model->FindOrFail($id);
         $requestArray = $request->all();
-        if(isset($requestArray['password']) && $requestArray['password'] != ""){
+        if (isset($requestArray['password']) && $requestArray['password'] != "") {
             $requestArray['password'] =  Hash::make($requestArray['password']);
-        }else{
+        } else {
             unset($requestArray['password']);
         }
         $row->update($requestArray);
@@ -74,8 +73,4 @@ class Users extends BackEndController
         $row->attachRole($request->role);
         return redirect()->route('users.index');
     }
-
-
-
-
 }

@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class Roles extends BackEndController
 {
-    public function __construct(Role $model){
+    public function __construct(Role $model)
+    {
         parent::__construct($model);
         //create read update delete
 //        $this->middleware(['permission:read_roles'])->only('index');
@@ -26,8 +27,7 @@ class Roles extends BackEndController
 
 
 
-    public
-    function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required',
@@ -42,13 +42,11 @@ class Roles extends BackEndController
 
         session()->flash('success', __('site.added_successfully'));
         return redirect()->route('roles.index');
-
     }//end of store
 
 
 
-    public
-    function update(Request $request, role $role)
+    public function update(Request $request, role $role)
     {
         $request->validate([
             'name' => 'required',
@@ -63,10 +61,5 @@ class Roles extends BackEndController
         $role->syncPermissions($request->permissions);
         session()->flash('success', __('site.updated_successfully'));
         return redirect()->route('roles.index');
-
     }//end of update
-
-
-
-
-    }//end of controller
+}//end of controller
